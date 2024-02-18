@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-02-06 09:25+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en_US\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:12
+msgid "About {name}"
+msgstr "About {name}"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:14
+msgid "Services"
+msgstr "Services"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:16
+msgid "Hide {name}"
+msgstr "Hide {name}"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:17
+msgid "Hide Others"
+msgstr "Hide Others"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:18
+msgid "Show All"
+msgstr "Show All"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:20
+msgid "Quit {name}"
+msgstr "Quit {name}"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:27
+#: src/main/menu.ts:59
+msgid "Close Window"
+msgstr "Close Window"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:30
+msgid "Quit Window"
+msgstr "Quit Window"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:34
+msgid "Paste And Match Style"
+msgstr "Paste And Match Style"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:35
+#: src/main/menu.ts:47
+msgid "Delete"
+msgstr "Delete"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:36
+#: src/main/menu.ts:49
+msgid "Select All"
+msgstr "Select All"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:39
+msgid "Speech"
+msgstr "Speech"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:41
+msgid "Start Speaking"
+msgstr "Start Speaking"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:42
+msgid "Stop Speaking"
+msgstr "Stop Speaking"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:54
+msgid "Bring All to Front"
+msgstr "Bring All to Front"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:64
+msgid "File"
+msgstr "File"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:68
+msgid "Edit"
+msgstr "Edit"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:70
+msgid "Undo"
+msgstr "Undo"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:71
+msgid "Redo"
+msgstr "Redo"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:73
+msgid "Cut"
+msgstr "Cut"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:74
+msgid "Copy"
+msgstr "Copy"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:75
+msgid "Paste"
+msgstr "Paste"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:80
+msgid "View"
+msgstr "View"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:82
+msgid "Reload"
+msgstr "Reload"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:83
+msgid "Force Reload"
+msgstr "Force Reload"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:84
+msgid "Toggle Developer Tools"
+msgstr "Toggle Developer Tools"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:86
+msgid "Actual Size"
+msgstr "Actual Size"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:87
+msgid "Zoom In"
+msgstr "Zoom In"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:88
+msgid "Zoom Out"
+msgstr "Zoom Out"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:90
+msgid "Toggle Full Screen"
+msgstr "Toggle Full Screen"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:94
+msgid "Window"
+msgstr "Window"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:96
+msgid "Minimize"
+msgstr "Minimize"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:97
+msgid "Zoom"
+msgstr "Zoom"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:103
+msgid "Help"
+msgstr "Help"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:112
+msgid "Documents"
+msgstr "Documents"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:131
+msgid "Author: jinyang1994"
+msgstr "Author: jinyang1994"
+
+#: src/renderer/src/components/i18n/switcher.tsx:17
+msgid "Chinese Simplified"
+msgstr "Chinese Simplified"
+
+#: src/renderer/src/pages/home/index.tsx:53
+msgid "Create Message"
+msgstr "Create Message"
+
+#: src/renderer/src/components/i18n/switcher.tsx:16
+msgid "English"
+msgstr "English"
+
+#: src/renderer/src/pages/home/index.tsx:43
+msgid "Genesis Electron"
+msgstr "Genesis Electron"
+
+#: src/renderer/src/pages/home/index.tsx:66
+msgid "Message Count: {0}"
+msgstr "Message Count: {0}"
+
+#: src/renderer/src/pages/home/index.tsx:46
+msgid "Please try pressing <0>F12</0> to open the devTool"
+msgstr "Please try pressing <0>F12</0> to open the devTool"
+
+#: src/renderer/src/pages/home/index.tsx:35
+msgid "Powered by <0>electron-vite, React, TypeScript, Lingui.js, shadcn/ui, better-sqlite3, TypeORM</0>"
+msgstr "Powered by <0>electron-vite, React, TypeScript, Lingui.js, shadcn/ui, better-sqlite3, TypeORM</0>"
