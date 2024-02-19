@@ -14,187 +14,193 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:12
+#: src/main/menu.ts:11
 msgid "About {name}"
 msgstr "About {name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:14
+#: src/main/menu.ts:13
 msgid "Services"
 msgstr "Services"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:16
+#: src/main/menu.ts:15
 msgid "Hide {name}"
 msgstr "Hide {name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:17
+#: src/main/menu.ts:16
 msgid "Hide Others"
 msgstr "Hide Others"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:18
+#: src/main/menu.ts:17
 msgid "Show All"
 msgstr "Show All"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:20
+#: src/main/menu.ts:19
 msgid "Quit {name}"
 msgstr "Quit {name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:27
-#: src/main/menu.ts:59
+#: src/main/menu.ts:26
+#: src/main/menu.ts:56
 msgid "Close Window"
 msgstr "Close Window"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:30
+#: src/main/menu.ts:29
 msgid "Quit Window"
 msgstr "Quit Window"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:34
+#: src/main/menu.ts:33
 msgid "Paste And Match Style"
 msgstr "Paste And Match Style"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:35
-#: src/main/menu.ts:47
+#: src/main/menu.ts:34
+#: src/main/menu.ts:46
 msgid "Delete"
 msgstr "Delete"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:36
-#: src/main/menu.ts:49
+#: src/main/menu.ts:35
+#: src/main/menu.ts:48
 msgid "Select All"
 msgstr "Select All"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:39
+#: src/main/menu.ts:38
 msgid "Speech"
 msgstr "Speech"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:41
+#: src/main/menu.ts:40
 msgid "Start Speaking"
 msgstr "Start Speaking"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:42
+#: src/main/menu.ts:41
 msgid "Stop Speaking"
 msgstr "Stop Speaking"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:54
+#: src/main/menu.ts:53
 msgid "Bring All to Front"
 msgstr "Bring All to Front"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:64
+#: src/main/menu.ts:61
 msgid "File"
 msgstr "File"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:68
+#: src/main/menu.ts:65
 msgid "Edit"
 msgstr "Edit"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:70
+#: src/main/menu.ts:67
 msgid "Undo"
 msgstr "Undo"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:71
+#: src/main/menu.ts:68
 msgid "Redo"
 msgstr "Redo"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:73
+#: src/main/menu.ts:70
 msgid "Cut"
 msgstr "Cut"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:74
+#: src/main/menu.ts:71
 msgid "Copy"
 msgstr "Copy"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:75
+#: src/main/menu.ts:72
 msgid "Paste"
 msgstr "Paste"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:80
+#: src/main/menu.ts:77
 msgid "View"
 msgstr "View"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:82
+#: src/main/menu.ts:79
 msgid "Reload"
 msgstr "Reload"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:83
+#: src/main/menu.ts:80
 msgid "Force Reload"
 msgstr "Force Reload"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:84
+#: src/main/menu.ts:81
+#: src/main/menu.ts:156
 msgid "Toggle Developer Tools"
 msgstr "Toggle Developer Tools"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:86
+#: src/main/menu.ts:83
 msgid "Actual Size"
 msgstr "Actual Size"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:87
+#: src/main/menu.ts:84
 msgid "Zoom In"
 msgstr "Zoom In"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:88
+#: src/main/menu.ts:85
 msgid "Zoom Out"
 msgstr "Zoom Out"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:90
+#: src/main/menu.ts:87
 msgid "Toggle Full Screen"
 msgstr "Toggle Full Screen"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:94
+#: src/main/menu.ts:91
 msgid "Window"
 msgstr "Window"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:96
+#: src/main/menu.ts:94
 msgid "Minimize"
 msgstr "Minimize"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:97
+#: src/main/menu.ts:95
 msgid "Zoom"
 msgstr "Zoom"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:103
+#: src/main/menu.ts:101
 msgid "Help"
 msgstr "Help"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:112
+#: src/main/menu.ts:110
 msgid "Documents"
 msgstr "Documents"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:131
+#: src/main/menu.ts:129
 msgid "Author: jinyang1994"
 msgstr "Author: jinyang1994"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:144
+msgid "New Window"
+msgstr "New Window"
 
 #: src/renderer/src/components/i18n/switcher.tsx:17
 msgid "Chinese Simplified"

@@ -14,187 +14,193 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:12
+#: src/main/menu.ts:11
 msgid "About {name}"
 msgstr "关于{name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:14
+#: src/main/menu.ts:13
 msgid "Services"
 msgstr "服务"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:16
+#: src/main/menu.ts:15
 msgid "Hide {name}"
 msgstr "隐藏{name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:17
+#: src/main/menu.ts:16
 msgid "Hide Others"
 msgstr "隐藏其他应用"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:18
+#: src/main/menu.ts:17
 msgid "Show All"
 msgstr "显示全部"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:20
+#: src/main/menu.ts:19
 msgid "Quit {name}"
 msgstr "退出{name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:27
-#: src/main/menu.ts:59
+#: src/main/menu.ts:26
+#: src/main/menu.ts:56
 msgid "Close Window"
 msgstr "关闭窗口"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:30
+#: src/main/menu.ts:29
 msgid "Quit Window"
 msgstr "退出窗口"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:34
+#: src/main/menu.ts:33
 msgid "Paste And Match Style"
 msgstr "粘贴并匹配样式"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:35
-#: src/main/menu.ts:47
+#: src/main/menu.ts:34
+#: src/main/menu.ts:46
 msgid "Delete"
 msgstr "删除"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:36
-#: src/main/menu.ts:49
+#: src/main/menu.ts:35
+#: src/main/menu.ts:48
 msgid "Select All"
 msgstr "全选"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:39
+#: src/main/menu.ts:38
 msgid "Speech"
 msgstr "语音"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:41
+#: src/main/menu.ts:40
 msgid "Start Speaking"
 msgstr "开始讲话"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:42
+#: src/main/menu.ts:41
 msgid "Stop Speaking"
 msgstr "停止讲话"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:54
+#: src/main/menu.ts:53
 msgid "Bring All to Front"
 msgstr "全部置于顶层"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:64
+#: src/main/menu.ts:61
 msgid "File"
 msgstr "文件"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:68
+#: src/main/menu.ts:65
 msgid "Edit"
 msgstr "编辑"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:70
+#: src/main/menu.ts:67
 msgid "Undo"
 msgstr "撤消"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:71
+#: src/main/menu.ts:68
 msgid "Redo"
 msgstr "重做"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:73
+#: src/main/menu.ts:70
 msgid "Cut"
 msgstr "剪切"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:74
+#: src/main/menu.ts:71
 msgid "Copy"
 msgstr "复制"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:75
+#: src/main/menu.ts:72
 msgid "Paste"
 msgstr "粘贴"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:80
+#: src/main/menu.ts:77
 msgid "View"
 msgstr "视图"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:82
+#: src/main/menu.ts:79
 msgid "Reload"
 msgstr "重新加载"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:83
+#: src/main/menu.ts:80
 msgid "Force Reload"
 msgstr "强制重新加载"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:84
+#: src/main/menu.ts:81
+#: src/main/menu.ts:156
 msgid "Toggle Developer Tools"
 msgstr "切换开发者工具"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:86
+#: src/main/menu.ts:83
 msgid "Actual Size"
 msgstr "实际大小"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:87
+#: src/main/menu.ts:84
 msgid "Zoom In"
 msgstr "放大"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:88
+#: src/main/menu.ts:85
 msgid "Zoom Out"
 msgstr "缩小"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:90
+#: src/main/menu.ts:87
 msgid "Toggle Full Screen"
 msgstr "切换全屏幕"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:94
+#: src/main/menu.ts:91
 msgid "Window"
 msgstr "窗口"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:96
+#: src/main/menu.ts:94
 msgid "Minimize"
 msgstr "最小化"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:97
+#: src/main/menu.ts:95
 msgid "Zoom"
 msgstr "缩放"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:103
+#: src/main/menu.ts:101
 msgid "Help"
 msgstr "帮助"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:112
+#: src/main/menu.ts:110
 msgid "Documents"
 msgstr "文档"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:131
+#: src/main/menu.ts:129
 msgid "Author: jinyang1994"
 msgstr "作者：jinyang1994"
+
+#. js-lingui-explicit-id
+#: src/main/menu.ts:144
+msgid "New Window"
+msgstr "新建窗口"
 
 #: src/renderer/src/components/i18n/switcher.tsx:17
 msgid "Chinese Simplified"
@@ -210,7 +216,7 @@ msgstr "English"
 
 #: src/renderer/src/pages/home/index.tsx:43
 msgid "Genesis Electron"
-msgstr ""
+msgstr "Genesis Electron"
 
 #: src/renderer/src/pages/home/index.tsx:66
 msgid "Message Count: {0}"

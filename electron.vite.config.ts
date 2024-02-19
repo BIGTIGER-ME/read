@@ -12,7 +12,7 @@ export default defineConfig({
     resolve: {
       alias: {
         ...commonAlias,
-        main: resolve('src/main'),
+        main: resolve('src/main')
       }
     },
     plugins: [externalizeDepsPlugin(), swcPlugin(), lingui()]

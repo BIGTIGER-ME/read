@@ -6,6 +6,11 @@ import * as Theme from 'renderer/components/theme'
 import router from './router'
 import './root.css'
 
+window.addEventListener('contextmenu', (e) => {
+  e.preventDefault()
+  window.electron.ipcRenderer.invoke('show-context-menu')
+})
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <I18n.Provider>

@@ -7,8 +7,9 @@ import { messages as enUS } from 'locales/en_US.po'
 import { messages as zhCN } from 'locales/zh_CN.po'
 import { MessageModel } from 'main/models/message'
 import * as msgServ from 'main/services/message'
+import { isMac } from 'main/utils'
 import icon from '../../resources/icon.png?asset'
-import menu from './menu'
+import { createAppMenu, createDockMenu, createPopupMenu } from './menu'
 
 function createWindow(): void {
   // Create the browser window.
@@ -78,7 +79,12 @@ app.whenReady().then(() => {
 
   ipcMain.handle('locales', async (_event, locale: Locale) => {
     i18n.activate(locale)
-    menu()
+    createAppMenu()
+    if (isMac) createDockMenu(createWindow)
+  })
+
+  ipcMain.handle('show-context-menu', (event) => {
+    createPopupMenu(event)
   })
 
   createWindow()

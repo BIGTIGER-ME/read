@@ -1,34 +1,36 @@
-import { app as App, shell, Menu, MenuItemConstructorOptions } from 'electron'
+import {
+  app,
+  shell,
+  Menu,
+  BrowserWindow,
+  IpcMainInvokeEvent,
+  MenuItemConstructorOptions
+} from 'electron'
 import { i18n } from '@lingui/core'
+import { isMac } from 'main/utils'
 
-const isMac = process.platform === 'darwin'
-
-export default () => {
-  const app: MenuItemConstructorOptions[] = isMac
+export function createAppMenu() {
+  const main: MenuItemConstructorOptions[] = isMac
     ? [
         {
-          label: App.name,
+          label: app.name,
           submenu: [
-            { role: 'about', label: i18n._('About {name}', { name: App.name }) },
+            { role: 'about', label: i18n._('About {name}', { name: app.name }) },
             { type: 'separator' },
             { role: 'services', label: i18n._('Services') },
             { type: 'separator' },
-            { role: 'hide', label: i18n._('Hide {name}', { name: App.name }) },
+            { role: 'hide', label: i18n._('Hide {name}', { name: app.name }) },
             { role: 'hideOthers', label: i18n._('Hide Others') },
             { role: 'unhide', label: i18n._('Show All') },
             { type: 'separator' },
-            { role: 'quit', label: i18n._('Quit {name}', { name: App.name }) }
+            { role: 'quit', label: i18n._('Quit {name}', { name: app.name }) }
           ]
         }
       ]
     : []
   const files: MenuItemConstructorOptions[] = isMac
-    ? [
-        { role: 'close', label: i18n._('Close Window') }
-      ]
-    : [
-        { role: 'quit', label: i18n._('Quit Window') }
-      ]
+    ? [{ role: 'close', label: i18n._('Close Window') }]
+    : [{ role: 'quit', label: i18n._('Quit Window') }]
   const edit: MenuItemConstructorOptions[] = isMac
     ? [
         { role: 'pasteAndMatchStyle', label: i18n._('Paste And Match Style') },
@@ -47,19 +49,12 @@ export default () => {
         { role: 'delete', label: i18n._('Delete') },
         { type: 'separator' },
         { role: 'selectAll', label: i18n._('Select All') }
-    ]
+      ]
   const window: MenuItemConstructorOptions[] = isMac
-    ? [
-        { type: 'separator' },
-        { role: 'front', label: i18n._('Bring All to Front') },
-        { type: 'separator' },
-        { role: 'window' }
-      ]
-    : [
-        { role: 'close', label: i18n._('Close Window') }
-      ]
-  const template: MenuItemConstructorOptions[] = [
-    ...app,
+    ? [{ type: 'separator' }, { role: 'front', label: i18n._('Bring All to Front') }]
+    : [{ role: 'close', label: i18n._('Close Window') }]
+  const appMenu = Menu.buildFromTemplate([
+    ...main,
     {
       label: i18n._('File'),
       submenu: files
@@ -92,6 +87,7 @@ export default () => {
     },
     {
       label: i18n._('Window'),
+      role: 'windowMenu',
       submenu: [
         { role: 'minimize', label: i18n._('Minimize') },
         { role: 'zoom', label: i18n._('Zoom') },
@@ -132,11 +128,31 @@ export default () => {
           click: async () => {
             await shell.openExternal('https://x.com/jinyang1994')
           }
-        },
+        }
       ]
     }
-  ]
-  const menu = Menu.buildFromTemplate(template)
+  ])
 
-  Menu.setApplicationMenu(menu)
+  Menu.setApplicationMenu(appMenu)
+}
+
+export function createDockMenu(createWindow: () => void) {
+  const dockMenu = Menu.buildFromTemplate([
+    {
+      label: i18n._('New Window'),
+      click: () => {
+        createWindow()
+      }
+    }
+  ])
+
+  app.dock.setMenu(dockMenu)
+}
+
+export function createPopupMenu(event: IpcMainInvokeEvent) {
+  const popupMenu = Menu.buildFromTemplate([
+    { role: 'toggleDevTools', label: i18n._('Toggle Developer Tools') }
+  ])
+
+  popupMenu.popup({ window: BrowserWindow.fromWebContents(event.sender) || undefined })
 }
