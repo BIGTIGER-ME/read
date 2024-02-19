@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext, PropsWithChildren } from 'react'
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
-import { Locale } from 'locales/constants'
+import { Locale, LOCAL_STORAGE_KEY } from 'locales/constants'
 import { messages as enUS } from 'locales/en_US.po'
 import { messages as zhCN } from 'locales/zh_CN.po'
 
@@ -13,19 +13,23 @@ type LocaleProviderState = {
   setLocale: (locale: Locale) => void
 }
 
+const getSystemLocale = () =>
+  (window.localStorage.getItem(LOCAL_STORAGE_KEY) ??
+    window.navigator.language.replace('-', '_')) as Locale
 const initialState: LocaleProviderState = {
-  locale: Locale.enUS,
+  locale: getSystemLocale(),
   setLocale: () => null
 }
 
 export const LocaleProviderContext = createContext<LocaleProviderState>(initialState)
 
 function Provider({ children }: PropsWithChildren<{}>) {
-  const [locale, setLocale] = useState(Locale.enUS)
+  const [locale, setLocale] = useState(getSystemLocale())
 
   useEffect(() => {
     i18n.activate(locale)
     window.electron.ipcRenderer.invoke('locales', locale)
+    window.localStorage.setItem(LOCAL_STORAGE_KEY, locale)
   }, [locale])
 
   return (
