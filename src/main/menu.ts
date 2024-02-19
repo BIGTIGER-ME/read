@@ -8,6 +8,7 @@ import {
 } from 'electron'
 import { i18n } from '@lingui/core'
 import { isMac } from 'main/utils'
+import { createWindow } from './window'
 
 export function createAppMenu() {
   const main: MenuItemConstructorOptions[] = isMac
@@ -136,7 +137,7 @@ export function createAppMenu() {
   Menu.setApplicationMenu(appMenu)
 }
 
-export function createDockMenu(createWindow: () => void) {
+export function createDockMenu() {
   const dockMenu = Menu.buildFromTemplate([
     {
       label: i18n._('New Window'),

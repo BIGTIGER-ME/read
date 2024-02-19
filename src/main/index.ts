@@ -1,6 +1,5 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
-import { join } from 'path'
-import { electronApp, optimizer, is } from '@electron-toolkit/utils'
+import { app, BrowserWindow, ipcMain } from 'electron'
+import { electronApp, optimizer } from '@electron-toolkit/utils'
 import { i18n } from '@lingui/core'
 import { Locale } from 'locales/constants'
 import { messages as enUS } from 'locales/en_US.po'
@@ -8,41 +7,8 @@ import { messages as zhCN } from 'locales/zh_CN.po'
 import { MessageModel } from 'main/models/message'
 import * as msgServ from 'main/services/message'
 import { isMac } from 'main/utils'
-import icon from '../../resources/icon.png?asset'
+import { createWindow } from './window'
 import { createAppMenu, createDockMenu, createPopupMenu } from './menu'
-
-function createWindow(): void {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    title: 'Gensis Electron',
-    width: 900,
-    height: 670,
-    show: false,
-    autoHideMenuBar: true,
-    ...(process.platform === 'linux' ? { icon } : {}),
-    webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
-    }
-  })
-
-  mainWindow.on('ready-to-show', () => {
-    mainWindow.show()
-  })
-
-  mainWindow.webContents.setWindowOpenHandler((details) => {
-    shell.openExternal(details.url)
-    return { action: 'deny' }
-  })
-
-  // HMR for renderer base on electron-vite cli.
-  // Load the remote URL for development or the local html file for production.
-  if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
-    mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
-  } else {
-    mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
-  }
-}
 
 // Load messages
 i18n.load(Locale.enUS, enUS)
@@ -80,7 +46,7 @@ app.whenReady().then(() => {
   ipcMain.handle('locales', async (_event, locale: Locale) => {
     i18n.activate(locale)
     createAppMenu()
-    if (isMac) createDockMenu(createWindow)
+    if (isMac) createDockMenu()
   })
 
   ipcMain.handle('show-context-menu', (event) => {
