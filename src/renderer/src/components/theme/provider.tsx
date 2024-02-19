@@ -1,25 +1,27 @@
 import { createContext, useEffect, useState, PropsWithChildren } from 'react'
-import { Theme } from 'renderer/constants/common'
+import { Theme, LOCAL_STROAGE_THEME } from 'renderer/constants/theme'
 
 type ThemeProviderState = {
   theme: Theme
   setTheme: (theme: Theme) => void
 }
 
+const getTheme = () => (window.localStorage.getItem(LOCAL_STROAGE_THEME) as Theme) ?? Theme.System
 const initialState: ThemeProviderState = {
-  theme: Theme.System,
+  theme: getTheme(),
   setTheme: () => null
 }
 
 export const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 function Provider({ children }: PropsWithChildren<{}>) {
-  const [theme, setTheme] = useState<Theme>(Theme.Dark)
+  const [theme, setTheme] = useState<Theme>(getTheme())
 
   useEffect(() => {
     const root = window.document.documentElement
 
     root.classList.remove('light', 'dark')
+    window.localStorage.setItem(LOCAL_STROAGE_THEME, theme)
     switch (theme) {
       case Theme.System:
         const media = window.matchMedia('(prefers-color-scheme: dark)')

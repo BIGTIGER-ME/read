@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from 'renderer/components/ui/dropdown-menu'
-import { Theme } from 'renderer/constants/common'
+import { Theme } from 'renderer/constants/theme'
 import { ThemeProviderContext } from './provider'
 
 function Switcher() {
