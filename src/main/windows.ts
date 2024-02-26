@@ -3,7 +3,7 @@ import { join } from 'path'
 import { is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
-export function createWindow(): void {
+export function createMainWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     title: 'Gensis Electron',
