@@ -14,218 +14,294 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:11
+#: src/main/menus.ts:19
 msgid "About {name}"
 msgstr "关于{name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:13
+#: src/main/menus.ts:21
 msgid "Services"
 msgstr "服务"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:15
+#: src/main/menus.ts:23
 msgid "Hide {name}"
 msgstr "隐藏{name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:16
+#: src/main/menus.ts:24
 msgid "Hide Others"
 msgstr "隐藏其他应用"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:17
+#: src/main/menus.ts:25
 msgid "Show All"
 msgstr "显示全部"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:19
+#: src/main/menus.ts:27
 msgid "Quit {name}"
 msgstr "退出{name}"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:26
-#: src/main/menu.ts:56
+#: src/main/menus.ts:33
+#: src/main/menus.ts:56
 msgid "Close Window"
 msgstr "关闭窗口"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:29
+#: src/main/menus.ts:34
 msgid "Quit Window"
 msgstr "退出窗口"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:33
+#: src/main/menus.ts:37
 msgid "Paste And Match Style"
 msgstr "粘贴并匹配样式"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:34
-#: src/main/menu.ts:46
+#: src/main/menus.ts:38
+#: src/main/menus.ts:50
 msgid "Delete"
 msgstr "删除"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:35
-#: src/main/menu.ts:48
+#: src/main/menus.ts:39
+#: src/main/menus.ts:52
 msgid "Select All"
 msgstr "全选"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:38
+#: src/main/menus.ts:42
 msgid "Speech"
 msgstr "语音"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:40
+#: src/main/menus.ts:44
 msgid "Start Speaking"
 msgstr "开始讲话"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:41
+#: src/main/menus.ts:45
 msgid "Stop Speaking"
 msgstr "停止讲话"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:53
+#: src/main/menus.ts:55
 msgid "Bring All to Front"
 msgstr "全部置于顶层"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:61
+#: src/main/menus.ts:60
 msgid "File"
 msgstr "文件"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:65
+#: src/main/menus.ts:64
 msgid "Edit"
 msgstr "编辑"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:67
+#: src/main/menus.ts:66
 msgid "Undo"
 msgstr "撤消"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:68
+#: src/main/menus.ts:67
 msgid "Redo"
 msgstr "重做"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:70
+#: src/main/menus.ts:69
 msgid "Cut"
 msgstr "剪切"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:71
+#: src/main/menus.ts:70
 msgid "Copy"
 msgstr "复制"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:72
+#: src/main/menus.ts:71
 msgid "Paste"
 msgstr "粘贴"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:77
+#: src/main/menus.ts:76
 msgid "View"
 msgstr "视图"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:79
+#: src/main/menus.ts:78
 msgid "Reload"
 msgstr "重新加载"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:80
+#: src/main/menus.ts:79
 msgid "Force Reload"
 msgstr "强制重新加载"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:81
-#: src/main/menu.ts:156
+#: src/main/menus.ts:80
+#: src/main/menus.ts:155
 msgid "Toggle Developer Tools"
 msgstr "切换开发者工具"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:83
+#: src/main/menus.ts:82
 msgid "Actual Size"
 msgstr "实际大小"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:84
+#: src/main/menus.ts:83
 msgid "Zoom In"
 msgstr "放大"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:85
+#: src/main/menus.ts:84
 msgid "Zoom Out"
 msgstr "缩小"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:87
+#: src/main/menus.ts:86
 msgid "Toggle Full Screen"
 msgstr "切换全屏幕"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:91
+#: src/main/menus.ts:90
 msgid "Window"
 msgstr "窗口"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:94
+#: src/main/menus.ts:93
 msgid "Minimize"
 msgstr "最小化"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:95
+#: src/main/menus.ts:94
 msgid "Zoom"
 msgstr "缩放"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:101
+#: src/main/menus.ts:100
 msgid "Help"
 msgstr "帮助"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:110
+#: src/main/menus.ts:109
 msgid "Documents"
 msgstr "文档"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:129
+#: src/main/menus.ts:128
 msgid "Author: jinyang1994"
 msgstr "作者：jinyang1994"
 
 #. js-lingui-explicit-id
-#: src/main/menu.ts:144
+#: src/main/menus.ts:143
 msgid "New Window"
 msgstr "新建窗口"
+
+#: src/renderer/src/pages/home/data-table-faceted-filter.tsx:53
+msgid "{0} selected"
+msgstr "已选择{0}"
+
+#: src/renderer/src/pages/home/data-table-column-header.tsx:46
+msgid "Asc"
+msgstr "升序"
 
 #: src/renderer/src/components/i18n/switcher.tsx:17
 msgid "Chinese Simplified"
 msgstr "中文简体"
 
-#: src/renderer/src/pages/home/index.tsx:53
-msgid "Create Message"
-msgstr "创建消息"
+#: src/renderer/src/pages/home/data-table-faceted-filter.tsx:125
+msgid "Clear filters"
+msgstr "清除筛选"
+
+#: src/renderer/src/pages/home/data-table-column-header.tsx:50
+msgid "Desc"
+msgstr "降序"
+
+#: src/renderer/src/pages/home/columns.tsx:73
+#: src/renderer/src/pages/home/data-table-toolbar.tsx:38
+msgid "Difficulty"
+msgstr "难度"
+
+#: src/renderer/src/pages/home/columns.tsx:36
+msgid "Document"
+msgstr "文档"
+
+#: src/renderer/src/pages/home/data/data.tsx:45
+msgid "Done"
+msgstr "已阅读"
 
 #: src/renderer/src/components/i18n/switcher.tsx:16
 msgid "English"
 msgstr "English"
 
-#: src/renderer/src/pages/home/index.tsx:43
-msgid "Genesis Electron"
-msgstr "Genesis Electron"
+#: src/renderer/src/pages/home/data-table-toolbar.tsx:23
+msgid "Filter documents..."
+msgstr "筛选文档"
 
-#: src/renderer/src/pages/home/index.tsx:66
-msgid "Message Count: {0}"
-msgstr "消息总数：{0}"
+#: src/renderer/src/pages/home/data/data.tsx:30
+msgid "Have doubts"
+msgstr "有疑问"
 
-#: src/renderer/src/pages/home/index.tsx:46
-msgid "Please try pressing <0>F12</0> to open the devTool"
-msgstr "请尝试按<0>F12</0>打开devTool"
+#: src/renderer/src/pages/create/head.tsx:58
+msgid "Heading 2"
+msgstr ""
 
-#: src/renderer/src/pages/home/index.tsx:35
-msgid "Powered by <0>electron-vite, React, TypeScript, Lingui.js, shadcn/ui, better-sqlite3, TypeORM</0>"
-msgstr "由 <0>electron-vite, React, TypeScript, Lingui.js, shadcn/ui, better-sqlite3, TypeORM</0> 提供支持"
+#: src/renderer/src/pages/create/head.tsx:62
+msgid "Heading 3"
+msgstr ""
+
+#: src/renderer/src/pages/create/head.tsx:66
+msgid "Heading 4"
+msgstr ""
+
+#: src/renderer/src/pages/create/head.tsx:70
+msgid "Heading 5"
+msgstr ""
+
+#: src/renderer/src/pages/create/head.tsx:74
+msgid "Heading 6"
+msgstr ""
+
+#: src/renderer/src/pages/home/data-table-column-header.tsx:55
+msgid "Hide"
+msgstr "隐藏"
+
+#: src/renderer/src/pages/home/data/data.tsx:62
+msgid "High"
+msgstr "高"
+
+#: src/renderer/src/pages/home/data/data.tsx:40
+msgid "In Progress"
+msgstr "阅读中"
+
+#: src/renderer/src/pages/home/data/data.tsx:52
+msgid "Low"
+msgstr "低"
+
+#: src/renderer/src/pages/home/data/data.tsx:57
+msgid "Medium"
+msgstr "普通"
+
+#: src/renderer/src/pages/home/data-table-faceted-filter.tsx:78
+#: src/renderer/src/pages/home/data-table.tsx:151
+#: src/renderer/src/pages/home/index.tsx:168
+msgid "No results found."
+msgstr "未找到结果。"
+
+#: src/renderer/src/pages/home/data-table-toolbar.tsx:48
+msgid "Reset"
+msgstr "重置"
+
+#: src/renderer/src/pages/home/columns.tsx:51
+#: src/renderer/src/pages/home/data-table-toolbar.tsx:31
+msgid "Status"
+msgstr "状态"
+
+#: src/renderer/src/pages/home/data/data.tsx:35
+msgid "Todo"
+msgstr "未阅读"

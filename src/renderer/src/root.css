@@ -79,39 +79,39 @@
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
+    user-select: none;
+  }
+
+  #root {
+    @apply h-screen;
   }
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-image: url('./wavy-lines.svg');
-  background-size: cover;
-  user-select: none;
+.content:hover:not(:has(.content:hover)),
+.content:focus:not(:has(.content:focus)) {
+  background: yellow;
 }
 
-code {
-  font-weight: 600;
-  padding: 3px 5px;
-  border-radius: 2px;
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    SF Mono,
-    Menlo,
-    Consolas,
-    Liberation Mono,
-    monospace;
-  font-size: 85%;
+.content:before {
+  content: attr(data-before-content);
+}
+.content:after {
+  content: attr(data-after-content);
 }
 
-#root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 80px;
+.ProseMirror {
+  outline: none;
+}
+
+.tiptap .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #ced4da;
+  pointer-events: none;
+  height: 0;
+}
+
+.prose li > p,
+.prose ol > p {
+  margin: 0;
 }

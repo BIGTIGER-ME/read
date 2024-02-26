@@ -1,11 +1,12 @@
 import System from 'main/services/system'
-import Message from 'main/services/message'
+import { Document } from 'main/services'
+
 
 function createHanlders() {
-  const message = new Message()
+  const document = new Document()
   const system = new System()
 
-  message.listen()
+  document.listen()
   system.listen()
 }
 

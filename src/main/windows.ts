@@ -7,10 +7,14 @@ export function createMainWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     title: 'Gensis Electron',
-    width: 900,
-    height: 670,
+    width: 1150,
+    height: 790,
+    minWidth: 1150,
+    minHeight: 790,
+    titleBarStyle: 'hiddenInset',
     show: false,
     autoHideMenuBar: true,
+    trafficLightPosition: { x: 18, y: 18 },
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
