@@ -1,6 +1,5 @@
 import System from 'main/services/system'
-import { Document } from 'main/services'
-
+import Document from 'main/services/document'
 
 function createHanlders() {
   const document = new Document()
