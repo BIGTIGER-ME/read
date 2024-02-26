@@ -28,7 +28,7 @@ function Provider({ children }: PropsWithChildren<{}>) {
 
   useEffect(() => {
     i18n.activate(locale)
-    window.electron.ipcRenderer.invoke('locales', locale)
+    window.api.system.setLocale(locale)
     window.localStorage.setItem(LOCAL_STORAGE_KEY, locale)
   }, [locale])
 

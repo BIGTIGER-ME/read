@@ -8,7 +8,7 @@ import './root.css'
 
 window.addEventListener('contextmenu', (e) => {
   e.preventDefault()
-  window.electron.ipcRenderer.invoke('show-context-menu')
+  window.api.system.showPopupMenu()
 })
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

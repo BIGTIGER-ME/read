@@ -1,8 +1,13 @@
 import { contextBridge } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
+import { methods as system } from '../main/services/system/methods'
+import { methods as message } from '../main/services/message'
 
 // Custom APIs for renderer
-const api = {}
+export const api = {
+  message,
+  system
+}
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise

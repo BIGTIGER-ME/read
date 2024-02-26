@@ -18,6 +18,11 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin(), swcPlugin(), lingui()]
   },
   preload: {
+    resolve: {
+      alias: {
+        main: resolve('src/main')
+      }
+    },
     plugins: [externalizeDepsPlugin()]
   },
   renderer: {

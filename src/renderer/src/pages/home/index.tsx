@@ -15,15 +15,13 @@ interface IMessage {
 function Home() {
   const [messages, setMessages] = useState<IMessage[]>([])
   const createMessage = useCallback(async () => {
-    const messages = await window.electron.ipcRenderer.invoke('create-message', {
-      content: 'test'
-    })
+    const messages = await window.api.message.create({ content: 'test' })
 
     setMessages(messages)
   }, [setMessages])
 
   useEffect(() => {
-    window.electron.ipcRenderer.invoke('all-messages').then((messages) => {
+    window.api.message.all().then((messages) => {
       setMessages(messages)
     })
   }, [])
