@@ -1,6 +1,5 @@
 import { ipcMain, ipcRenderer } from 'electron'
-import { Repository } from 'typeorm'
-import { DataBase } from 'main/utils/database'
+import { DataSource, Repository } from 'typeorm'
 import { Model, Status, Difficulty } from 'main/models/document'
 
 export const DOCUMENT_LIST_CHANNEL = 'DOCUMENT_LIST'
@@ -24,16 +23,14 @@ export const methods = {
     ipcRenderer.invoke(DOCUMENT_UPDATE_CHANNEL, { id, data })
 }
 
-class Service extends DataBase {
+class Service {
   private readonly _repository: Repository<Model>
 
-  constructor() {
-    super('database', [Model])
-    this._repository = this.getRepository(Model)
+  constructor(database: DataSource) {
+    this._repository = database.getRepository(Model)
   }
 
   public async listen() {
-    await this.initialize()
     ipcMain.handle(DOCUMENT_LIST_CHANNEL, () => this._list())
     ipcMain.handle(DOCUMENT_CREATE_CHANNEL, (_, data: Pick<Document, 'content'>) =>
       this._create(data)

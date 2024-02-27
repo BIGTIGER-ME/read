@@ -7,7 +7,8 @@
   -webkit-app-region: drag;
 }
 
-.not {
+.not,
+.not * {
   -webkit-user-select: none;
   -webkit-app-region: none;
 }

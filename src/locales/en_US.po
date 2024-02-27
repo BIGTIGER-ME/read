@@ -202,36 +202,50 @@ msgstr "Author: jinyang1994"
 msgid "New Window"
 msgstr "New Window"
 
-#: src/renderer/src/pages/home/data-table-faceted-filter.tsx:53
-msgid "{0} selected"
-msgstr "{0} selected"
+#: src/renderer/src/pages/home/item.tsx:77
+msgid "About {words} words"
+msgstr "About {words} words"
 
-#: src/renderer/src/pages/home/data-table-column-header.tsx:46
-msgid "Asc"
-msgstr "Asc"
+#: src/renderer/src/pages/create/head.tsx:153
+#: src/renderer/src/pages/home/index.tsx:35
+msgid "Add document"
+msgstr "Add document"
+
+#: src/renderer/src/pages/home/sidebar.tsx:41
+msgid "All Documents"
+msgstr "All Documents"
+
+#: src/renderer/src/pages/read/head.tsx:47
+msgid "Archive"
+msgstr "Archive"
+
+#: src/renderer/src/pages/home/sidebar.tsx:45
+msgid "Archived"
+msgstr "Archived"
+
+#: src/renderer/src/pages/create/head.tsx:45
+#: src/renderer/src/pages/read/head.tsx:36
+msgid "Back"
+msgstr "Back"
+
+#: src/renderer/src/pages/create/head.tsx:97
+msgid "Bullist"
+msgstr "Bullist"
 
 #: src/renderer/src/components/i18n/switcher.tsx:17
 msgid "Chinese Simplified"
 msgstr "Chinese Simplified"
 
-#: src/renderer/src/pages/home/data-table-faceted-filter.tsx:125
-msgid "Clear filters"
-msgstr "Clear filters"
-
-#: src/renderer/src/pages/home/data-table-column-header.tsx:50
-msgid "Desc"
-msgstr "Desc"
-
-#: src/renderer/src/pages/home/columns.tsx:73
-#: src/renderer/src/pages/home/data-table-toolbar.tsx:38
+#: src/renderer/src/pages/home/sidebar.tsx:74
 msgid "Difficulty"
 msgstr "Difficulty"
 
-#: src/renderer/src/pages/home/columns.tsx:36
+#: src/renderer/src/pages/home/sidebar.tsx:22
 msgid "Document"
 msgstr "Document"
 
-#: src/renderer/src/pages/home/data/data.tsx:45
+#: src/renderer/src/pages/home/sidebar.tsx:68
+#: src/renderer/src/pages/read/head.tsx:113
 msgid "Done"
 msgstr "Done"
 
@@ -239,69 +253,84 @@ msgstr "Done"
 msgid "English"
 msgstr "English"
 
-#: src/renderer/src/pages/home/data-table-toolbar.tsx:23
-msgid "Filter documents..."
-msgstr "Filter documents..."
+#: src/renderer/src/pages/home/index.tsx:30
+msgid "Every new day is another chance to change your life."
+msgstr "Every new day is another chance to change your life."
 
-#: src/renderer/src/pages/home/data/data.tsx:30
+#: src/renderer/src/pages/home/index.tsx:27
+msgid "Good morning, reader!"
+msgstr "Good morning, reader!"
+
+#: src/renderer/src/pages/home/sidebar.tsx:64
+#: src/renderer/src/pages/read/head.tsx:109
 msgid "Have doubts"
 msgstr "Have doubts"
 
-#: src/renderer/src/pages/create/head.tsx:58
+#: src/renderer/src/pages/create/head.tsx:59
 msgid "Heading 2"
 msgstr "Heading 2"
 
-#: src/renderer/src/pages/create/head.tsx:62
+#: src/renderer/src/pages/create/head.tsx:63
 msgid "Heading 3"
 msgstr "Heading 3"
 
-#: src/renderer/src/pages/create/head.tsx:66
+#: src/renderer/src/pages/create/head.tsx:67
 msgid "Heading 4"
 msgstr "Heading 4"
 
-#: src/renderer/src/pages/create/head.tsx:70
+#: src/renderer/src/pages/create/head.tsx:71
 msgid "Heading 5"
 msgstr "Heading 5"
 
-#: src/renderer/src/pages/create/head.tsx:74
+#: src/renderer/src/pages/create/head.tsx:75
 msgid "Heading 6"
 msgstr "Heading 6"
 
-#: src/renderer/src/pages/home/data-table-column-header.tsx:55
-msgid "Hide"
-msgstr "Hide"
-
-#: src/renderer/src/pages/home/data/data.tsx:62
+#: src/renderer/src/pages/home/sidebar.tsx:79
 msgid "High"
 msgstr "High"
 
-#: src/renderer/src/pages/home/data/data.tsx:40
+#: src/renderer/src/pages/home/sidebar.tsx:56
+#: src/renderer/src/pages/read/head.tsx:101
 msgid "In Progress"
 msgstr "In Progress"
 
-#: src/renderer/src/pages/home/data/data.tsx:52
+#: src/renderer/src/pages/home/sidebar.tsx:88
 msgid "Low"
 msgstr "Low"
 
-#: src/renderer/src/pages/home/data/data.tsx:57
+#: src/renderer/src/pages/home/sidebar.tsx:83
 msgid "Medium"
 msgstr "Medium"
 
-#: src/renderer/src/pages/home/data-table-faceted-filter.tsx:78
-#: src/renderer/src/pages/home/data-table.tsx:151
-#: src/renderer/src/pages/home/index.tsx:168
-msgid "No results found."
-msgstr "No results found."
+#: src/renderer/src/pages/create/head.tsx:107
+msgid "Ordered List"
+msgstr "Ordered List"
 
-#: src/renderer/src/pages/home/data-table-toolbar.tsx:48
-msgid "Reset"
-msgstr "Reset"
+#: src/renderer/src/pages/create/head.tsx:86
+msgid "Quote"
+msgstr "Quote"
 
-#: src/renderer/src/pages/home/columns.tsx:51
-#: src/renderer/src/pages/home/data-table-toolbar.tsx:31
+#: src/renderer/src/pages/create/head.tsx:131
+#: src/renderer/src/pages/read/head.tsx:81
+msgid "Redo"
+msgstr "Redo"
+
+#: src/renderer/src/pages/read/head.tsx:57
+msgid "Remove"
+msgstr "Remove"
+
+#: src/renderer/src/pages/home/sidebar.tsx:51
+#: src/renderer/src/pages/read/head.tsx:94
 msgid "Status"
 msgstr "Status"
 
-#: src/renderer/src/pages/home/data/data.tsx:35
+#: src/renderer/src/pages/home/sidebar.tsx:60
+#: src/renderer/src/pages/read/head.tsx:105
 msgid "Todo"
 msgstr "Todo"
+
+#: src/renderer/src/pages/create/head.tsx:121
+#: src/renderer/src/pages/read/head.tsx:71
+msgid "Undo"
+msgstr "Undo"

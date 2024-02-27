@@ -39,10 +39,11 @@ function Head({ editor }: IHeadProps) {
               <TooltipTrigger asChild>
                 <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
                   <ChevronLeft className="h-4 w-4" />
-                  <span className="sr-only">Back</span>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Back</TooltipContent>
+              <TooltipContent>
+                <Trans>Back</Trans>
+              </TooltipContent>
             </Tooltip>
             <Separator orientation="vertical" className="mx-2 h-6" />
             <DropdownMenu>
@@ -79,29 +80,32 @@ function Head({ editor }: IHeadProps) {
               <TooltipTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <QuoteIcon className="h-4 w-4" />
-                  <span className="sr-only">Quote</span>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Quote</TooltipContent>
+              <TooltipContent>
+                <Trans>Quote</Trans>
+              </TooltipContent>
             </Tooltip>
             <Separator orientation="vertical" className="mx-2 h-6" />
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <List className="h-4 w-4" />
-                  <span className="sr-only">List</span>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>List</TooltipContent>
+              <TooltipContent>
+                <Trans>Bullist</Trans>
+              </TooltipContent>
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <ListOrdered className="h-4 w-4" />
-                  <span className="sr-only">List Ordered</span>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>List Ordered</TooltipContent>
+              <TooltipContent>
+                <Trans>Ordered List</Trans>
+              </TooltipContent>
             </Tooltip>
           </div>
         </NotRemovable>
@@ -111,19 +115,21 @@ function Head({ editor }: IHeadProps) {
               <TooltipTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Undo className="h-4 w-4" />
-                  <span className="sr-only">Undo</span>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Undo</TooltipContent>
+              <TooltipContent>
+                <Trans>Undo</Trans>
+              </TooltipContent>
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Redo className="h-4 w-4" />
-                  <span className="sr-only">Redo</span>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Redo</TooltipContent>
+              <TooltipContent>
+                <Trans>Redo</Trans>
+              </TooltipContent>
             </Tooltip>
             <Separator orientation="vertical" className="mx-2 h-6" />
             <Tooltip>
@@ -141,10 +147,11 @@ function Head({ editor }: IHeadProps) {
                   }}
                 >
                   <Check className="h-4 w-4" />
-                  <span className="sr-only">Done</span>
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Done</TooltipContent>
+              <TooltipContent>
+                <Trans>Add document</Trans>
+              </TooltipContent>
             </Tooltip>
           </div>
         </NotRemovable>
