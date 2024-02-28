@@ -1,17 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, BeforeUpdate } from 'typeorm'
-
-export enum Status {
-  Todo = 'todo',
-  Doing = 'doing',
-  Backlog = 'backlog',
-  Done = 'done'
-}
-
-export enum Difficulty {
-  Low = 'low',
-  Medium = 'medium',
-  High = 'high'
-}
+import { Status, Difficulty } from 'schemas/document'
 
 @Entity('document')
 export class Model {
@@ -26,6 +14,9 @@ export class Model {
     default: Status.Todo
   })
   status!: Status
+
+  @Column('boolean', { default: false })
+  archived!: boolean
 
   @Column('simple-enum', {
     enum: [Difficulty.Low, Difficulty.Medium, Difficulty.High],

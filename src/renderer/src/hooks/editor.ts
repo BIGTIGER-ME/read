@@ -1,4 +1,4 @@
-import { useEditor as useTiptapEditor, Content, Extensions } from '@tiptap/react'
+import { useEditor as useTiptapEditor, Content, EditorOptions } from '@tiptap/react'
 import { EditorProps } from '@tiptap/pm/view'
 import { Document } from '@tiptap/extension-document'
 import { Placeholder } from '@tiptap/extension-placeholder'
@@ -11,46 +11,51 @@ import { Image } from '@tiptap/extension-image'
 import { Paragraph } from '@tiptap/extension-paragraph'
 import { Text } from '@tiptap/extension-text'
 import { History } from '@tiptap/extension-history'
+import * as Extension from 'renderer/components/editor/extensions'
 
 interface IEditorOptions {
   content: Content
-  extensions?: Extensions
   editorProps?: EditorProps
+  onUpdate?: EditorOptions['onUpdate']
 }
 
-export function useEditor({ content, editorProps, extensions = [] }: IEditorOptions) {
-  const editor = useTiptapEditor({
-    content,
-    editorProps,
-    extensions: [
-      Heading,
-      Paragraph,
-      Blockquote,
-      BulletList,
-      OrderedList,
-      ListItem,
-      Text,
-      History,
-      Document.extend({
-        content: 'heading block*'
-      }),
-      Placeholder.configure({
-        placeholder: ({ node, pos }) => {
-          if (node.type.name === 'heading' && node.attrs.level === 1 && pos === 0) {
-            return 'What’s the title?'
+export function useEditor({ content, editorProps, onUpdate }: IEditorOptions) {
+  const editor = useTiptapEditor(
+    {
+      content,
+      editorProps,
+      extensions: [
+        Heading,
+        Paragraph,
+        Blockquote,
+        BulletList,
+        OrderedList,
+        ListItem,
+        Text,
+        History,
+        Document.extend({
+          content: 'heading block*'
+        }),
+        Placeholder.configure({
+          placeholder: ({ node, pos }) => {
+            if (node.type.name === 'heading' && node.attrs.level === 1 && pos === 0) {
+              return 'What’s the title?'
+            }
+            return ''
           }
-          return ''
-        }
-      }),
-      Image.configure({
-        allowBase64: true,
-        HTMLAttributes: {
-          style: 'width: 100%'
-        }
-      }),
-      ...extensions
-    ]
-  })
+        }),
+        Image.configure({
+          allowBase64: true,
+          HTMLAttributes: {
+            style: 'width: 100%'
+          }
+        }),
+        Extension.Test.configure({ beforeContent: '(', afterContent: ')' })
+      ],
+      onUpdate
+    },
+    [content]
+  )
 
   return editor
 }

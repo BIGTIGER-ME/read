@@ -1,5 +1,7 @@
+import { createElement, useCallback } from 'react'
 import { Trans } from '@lingui/macro'
 import { useNavigate } from 'react-router-dom'
+import { Editor } from '@tiptap/core'
 import {
   CheckCircledIcon,
   CircleIcon,
@@ -17,9 +19,30 @@ import {
 } from 'renderer/components/ui/dropdown-menu'
 import { Separator } from 'renderer/components/ui/separator'
 import { Tooltip, TooltipContent, TooltipTrigger } from 'renderer/components/ui/tooltip'
+import { useRemove, useUpdate } from 'renderer/hooks/document'
+import { IDocumentUISchema as IDocument, Status } from 'schemas/document'
 
-function Head() {
+interface IHeadProps {
+  editor: Editor
+  data: IDocument
+}
+
+const statuses = [
+  { id: Status.Todo, icon: CircleIcon, label: <Trans>Todo</Trans> },
+  { id: Status.Doing, icon: StopwatchIcon, label: <Trans>In Progress</Trans> },
+  { id: Status.Backlog, icon: QuestionMarkCircledIcon, label: <Trans>Have doubts</Trans> },
+  { id: Status.Done, icon: CheckCircledIcon, label: <Trans>Done</Trans> }
+]
+
+function Head({ editor, data }: IHeadProps) {
   const navigate = useNavigate()
+  const back = useCallback(() => navigate(-1), [navigate])
+  const remove = useRemove(data.id)
+  const update = useUpdate(data.id)
+  const handleRemove = useCallback(async () => {
+    remove()
+    back()
+  }, [remove, back])
 
   return (
     <Removable>
@@ -28,7 +51,7 @@ function Head() {
           <div className="flex items-center gap-2">
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
+                <Button variant="ghost" size="icon" onClick={back}>
                   <ChevronLeft className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
@@ -39,7 +62,11 @@ function Head() {
             <Separator orientation="vertical" className="mx-1 h-6" />
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button
+                  size="icon"
+                  variant={data.archived ? 'secondary' : 'ghost'}
+                  onClick={() => update({ archived: !data.archived })}
+                >
                   <Archive className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
@@ -49,7 +76,7 @@ function Head() {
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" onClick={handleRemove}>
                   <Trash2 className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
@@ -63,7 +90,12 @@ function Head() {
           <div className="ml-auto flex items-center gap-2">
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => editor.chain().focus().undo().run()}
+                  disabled={!editor.can().chain().focus().undo().run()}
+                >
                   <Undo className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
@@ -73,7 +105,12 @@ function Head() {
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => editor.chain().focus().redo().run()}
+                  disabled={!editor.can().chain().focus().redo().run()}
+                >
                   <Redo className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
@@ -83,35 +120,24 @@ function Head() {
             </Tooltip>
             <Separator orientation="vertical" className="mx-2 h-6" />
             <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Button variant="ghost" size="icon">
-                      <StopwatchIcon strokeWidth={2} className="h-4 w-4" />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <Trans>Status</Trans>
-                  </TooltipContent>
-                </Tooltip>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  {createElement(
+                    statuses.find((status) => status.id === data.status)?.icon ?? CircleIcon,
+                    { strokeWidth: 2, className: 'h-4 w-4' }
+                  )}
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-40">
-                <DropdownMenuItem>
-                  <StopwatchIcon strokeWidth={2} className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
-                  <Trans>In Progress</Trans>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <CircleIcon strokeWidth={2} className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
-                  <Trans>Todo</Trans>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <QuestionMarkCircledIcon strokeWidth={2} className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
-                  <Trans>Have doubts</Trans>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <CheckCircledIcon strokeWidth={2} className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
-                  <Trans>Done</Trans>
-                </DropdownMenuItem>
+                {statuses.map((status) => (
+                  <DropdownMenuItem key={status.id} onClick={() => update({ status: status.id })}>
+                    {createElement(status.icon, {
+                      strokeWidth: 2,
+                      className: 'mr-2 h-3.5 w-3.5 text-muted-foreground/70'
+                    })}
+                    {status.label}
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </div>

@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 import { lingui } from '@lingui/vite-plugin'
 
 const commonAlias = {
-  locales: resolve('src/locales')
+  locales: resolve('src/locales'),
+  schemas: resolve('src/schemas')
 }
 
 export default defineConfig({
@@ -20,6 +21,7 @@ export default defineConfig({
   preload: {
     resolve: {
       alias: {
+        ...commonAlias,
         main: resolve('src/main')
       }
     },

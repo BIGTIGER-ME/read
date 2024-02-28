@@ -5,7 +5,7 @@ import Create from 'renderer/pages/create'
 
 const router = createBrowserRouter([
   {
-    path: '/read',
+    path: '/read/:id',
     element: <Read />
   },
   {

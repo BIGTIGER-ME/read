@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import html2canvas from 'html2canvas'
 import { cn } from 'renderer/utils'
+import { runTask } from './utils'
 
 interface ICoverProps {
   content: string
@@ -13,7 +14,7 @@ function CoverImage({ content, src, className }: ICoverProps) {
 
   useEffect(() => {
     if (src) return
-    setTimeout(() => {
+    runTask(() => {
       const container = document.createElement('div')
 
       container.className = 'prose prose-zinc mx-auto dark:prose-invert'
@@ -23,7 +24,7 @@ function CoverImage({ content, src, className }: ICoverProps) {
         setImage(canvas.toDataURL('image/png'))
       })
       document.body.removeChild(container)
-    }, 1000)
+    })
   }, [content, setImage])
 
   return (

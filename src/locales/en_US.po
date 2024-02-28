@@ -202,12 +202,12 @@ msgstr "Author: jinyang1994"
 msgid "New Window"
 msgstr "New Window"
 
-#: src/renderer/src/pages/home/item.tsx:77
+#: src/renderer/src/pages/home/item.tsx:51
 msgid "About {words} words"
 msgstr "About {words} words"
 
-#: src/renderer/src/pages/create/head.tsx:153
-#: src/renderer/src/pages/home/index.tsx:35
+#: src/renderer/src/pages/create/head.tsx:199
+#: src/renderer/src/pages/home/index.tsx:47
 msgid "Add document"
 msgstr "Add document"
 
@@ -215,7 +215,7 @@ msgstr "Add document"
 msgid "All Documents"
 msgstr "All Documents"
 
-#: src/renderer/src/pages/read/head.tsx:47
+#: src/renderer/src/pages/read/head.tsx:55
 msgid "Archive"
 msgstr "Archive"
 
@@ -223,14 +223,14 @@ msgstr "Archive"
 msgid "Archived"
 msgstr "Archived"
 
-#: src/renderer/src/pages/create/head.tsx:45
-#: src/renderer/src/pages/read/head.tsx:36
+#: src/renderer/src/pages/create/head.tsx:53
+#: src/renderer/src/pages/read/head.tsx:44
 msgid "Back"
 msgstr "Back"
 
-#: src/renderer/src/pages/create/head.tsx:97
-msgid "Bullist"
-msgstr "Bullist"
+#: src/renderer/src/pages/create/head.tsx:140
+msgid "Bullet List"
+msgstr "Bullet List"
 
 #: src/renderer/src/components/i18n/switcher.tsx:17
 msgid "Chinese Simplified"
@@ -245,7 +245,7 @@ msgid "Document"
 msgstr "Document"
 
 #: src/renderer/src/pages/home/sidebar.tsx:68
-#: src/renderer/src/pages/read/head.tsx:113
+#: src/renderer/src/pages/read/head.tsx:126
 msgid "Done"
 msgstr "Done"
 
@@ -253,36 +253,36 @@ msgstr "Done"
 msgid "English"
 msgstr "English"
 
-#: src/renderer/src/pages/home/index.tsx:30
+#: src/renderer/src/pages/home/index.tsx:41
 msgid "Every new day is another chance to change your life."
 msgstr "Every new day is another chance to change your life."
 
-#: src/renderer/src/pages/home/index.tsx:27
+#: src/renderer/src/pages/home/index.tsx:38
 msgid "Good morning, reader!"
 msgstr "Good morning, reader!"
 
 #: src/renderer/src/pages/home/sidebar.tsx:64
-#: src/renderer/src/pages/read/head.tsx:109
+#: src/renderer/src/pages/read/head.tsx:119
 msgid "Have doubts"
 msgstr "Have doubts"
 
-#: src/renderer/src/pages/create/head.tsx:59
+#: src/renderer/src/pages/create/head.tsx:80
 msgid "Heading 2"
 msgstr "Heading 2"
 
-#: src/renderer/src/pages/create/head.tsx:63
+#: src/renderer/src/pages/create/head.tsx:84
 msgid "Heading 3"
 msgstr "Heading 3"
 
-#: src/renderer/src/pages/create/head.tsx:67
+#: src/renderer/src/pages/create/head.tsx:88
 msgid "Heading 4"
 msgstr "Heading 4"
 
-#: src/renderer/src/pages/create/head.tsx:71
+#: src/renderer/src/pages/create/head.tsx:92
 msgid "Heading 5"
 msgstr "Heading 5"
 
-#: src/renderer/src/pages/create/head.tsx:75
+#: src/renderer/src/pages/create/head.tsx:96
 msgid "Heading 6"
 msgstr "Heading 6"
 
@@ -291,7 +291,7 @@ msgid "High"
 msgstr "High"
 
 #: src/renderer/src/pages/home/sidebar.tsx:56
-#: src/renderer/src/pages/read/head.tsx:101
+#: src/renderer/src/pages/read/head.tsx:105
 msgid "In Progress"
 msgstr "In Progress"
 
@@ -303,34 +303,37 @@ msgstr "Low"
 msgid "Medium"
 msgstr "Medium"
 
-#: src/renderer/src/pages/create/head.tsx:107
+#: src/renderer/src/pages/create/head.tsx:154
 msgid "Ordered List"
 msgstr "Ordered List"
 
-#: src/renderer/src/pages/create/head.tsx:86
+#: src/renderer/src/pages/create/head.tsx:111
 msgid "Quote"
 msgstr "Quote"
 
-#: src/renderer/src/pages/create/head.tsx:131
-#: src/renderer/src/pages/read/head.tsx:81
+#: src/renderer/src/pages/create/head.tsx:188
+#: src/renderer/src/pages/read/head.tsx:89
 msgid "Redo"
 msgstr "Redo"
 
-#: src/renderer/src/pages/read/head.tsx:57
+#: src/renderer/src/pages/read/head.tsx:65
 msgid "Remove"
 msgstr "Remove"
 
 #: src/renderer/src/pages/home/sidebar.tsx:51
-#: src/renderer/src/pages/read/head.tsx:94
 msgid "Status"
 msgstr "Status"
 
+#: src/renderer/src/pages/create/head.tsx:125
+msgid "Text"
+msgstr "Text"
+
 #: src/renderer/src/pages/home/sidebar.tsx:60
-#: src/renderer/src/pages/read/head.tsx:105
+#: src/renderer/src/pages/read/head.tsx:112
 msgid "Todo"
 msgstr "Todo"
 
-#: src/renderer/src/pages/create/head.tsx:121
-#: src/renderer/src/pages/read/head.tsx:71
+#: src/renderer/src/pages/create/head.tsx:173
+#: src/renderer/src/pages/read/head.tsx:79
 msgid "Undo"
 msgstr "Undo"

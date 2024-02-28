@@ -202,12 +202,12 @@ msgstr "作者：jinyang1994"
 msgid "New Window"
 msgstr "新建窗口"
 
-#: src/renderer/src/pages/home/item.tsx:77
+#: src/renderer/src/pages/home/item.tsx:51
 msgid "About {words} words"
 msgstr "大约{words}个单词"
 
-#: src/renderer/src/pages/create/head.tsx:153
-#: src/renderer/src/pages/home/index.tsx:35
+#: src/renderer/src/pages/create/head.tsx:199
+#: src/renderer/src/pages/home/index.tsx:47
 msgid "Add document"
 msgstr "添加文章"
 
@@ -215,7 +215,7 @@ msgstr "添加文章"
 msgid "All Documents"
 msgstr "全部文章"
 
-#: src/renderer/src/pages/read/head.tsx:47
+#: src/renderer/src/pages/read/head.tsx:55
 msgid "Archive"
 msgstr "归档"
 
@@ -223,13 +223,13 @@ msgstr "归档"
 msgid "Archived"
 msgstr "已归档"
 
-#: src/renderer/src/pages/create/head.tsx:45
-#: src/renderer/src/pages/read/head.tsx:36
+#: src/renderer/src/pages/create/head.tsx:53
+#: src/renderer/src/pages/read/head.tsx:44
 msgid "Back"
 msgstr "返回"
 
-#: src/renderer/src/pages/create/head.tsx:97
-msgid "Bullist"
+#: src/renderer/src/pages/create/head.tsx:140
+msgid "Bullet List"
 msgstr "无序列表"
 
 #: src/renderer/src/components/i18n/switcher.tsx:17
@@ -245,7 +245,7 @@ msgid "Document"
 msgstr "文章"
 
 #: src/renderer/src/pages/home/sidebar.tsx:68
-#: src/renderer/src/pages/read/head.tsx:113
+#: src/renderer/src/pages/read/head.tsx:126
 msgid "Done"
 msgstr "已阅读"
 
@@ -253,36 +253,36 @@ msgstr "已阅读"
 msgid "English"
 msgstr "English"
 
-#: src/renderer/src/pages/home/index.tsx:30
+#: src/renderer/src/pages/home/index.tsx:41
 msgid "Every new day is another chance to change your life."
-msgstr "每一天都是改变人生的机会。"
+msgstr "Every new day is another chance to change your life. - 每一天都是改变人生的机会。"
 
-#: src/renderer/src/pages/home/index.tsx:27
+#: src/renderer/src/pages/home/index.tsx:38
 msgid "Good morning, reader!"
 msgstr "早晨好，读者！"
 
 #: src/renderer/src/pages/home/sidebar.tsx:64
-#: src/renderer/src/pages/read/head.tsx:109
+#: src/renderer/src/pages/read/head.tsx:119
 msgid "Have doubts"
 msgstr "有疑问"
 
-#: src/renderer/src/pages/create/head.tsx:59
+#: src/renderer/src/pages/create/head.tsx:80
 msgid "Heading 2"
 msgstr "标题2"
 
-#: src/renderer/src/pages/create/head.tsx:63
+#: src/renderer/src/pages/create/head.tsx:84
 msgid "Heading 3"
 msgstr "标题3"
 
-#: src/renderer/src/pages/create/head.tsx:67
+#: src/renderer/src/pages/create/head.tsx:88
 msgid "Heading 4"
 msgstr "标题4"
 
-#: src/renderer/src/pages/create/head.tsx:71
+#: src/renderer/src/pages/create/head.tsx:92
 msgid "Heading 5"
 msgstr "标题5"
 
-#: src/renderer/src/pages/create/head.tsx:75
+#: src/renderer/src/pages/create/head.tsx:96
 msgid "Heading 6"
 msgstr "标题6"
 
@@ -291,7 +291,7 @@ msgid "High"
 msgstr "高等级"
 
 #: src/renderer/src/pages/home/sidebar.tsx:56
-#: src/renderer/src/pages/read/head.tsx:101
+#: src/renderer/src/pages/read/head.tsx:105
 msgid "In Progress"
 msgstr "阅读中"
 
@@ -303,34 +303,37 @@ msgstr "低等级"
 msgid "Medium"
 msgstr "普通等级"
 
-#: src/renderer/src/pages/create/head.tsx:107
+#: src/renderer/src/pages/create/head.tsx:154
 msgid "Ordered List"
 msgstr "有序列表"
 
-#: src/renderer/src/pages/create/head.tsx:86
+#: src/renderer/src/pages/create/head.tsx:111
 msgid "Quote"
 msgstr "引用"
 
-#: src/renderer/src/pages/create/head.tsx:131
-#: src/renderer/src/pages/read/head.tsx:81
+#: src/renderer/src/pages/create/head.tsx:188
+#: src/renderer/src/pages/read/head.tsx:89
 msgid "Redo"
 msgstr "重做"
 
-#: src/renderer/src/pages/read/head.tsx:57
+#: src/renderer/src/pages/read/head.tsx:65
 msgid "Remove"
 msgstr "删除"
 
 #: src/renderer/src/pages/home/sidebar.tsx:51
-#: src/renderer/src/pages/read/head.tsx:94
 msgid "Status"
 msgstr "状态"
 
+#: src/renderer/src/pages/create/head.tsx:125
+msgid "Text"
+msgstr "文本"
+
 #: src/renderer/src/pages/home/sidebar.tsx:60
-#: src/renderer/src/pages/read/head.tsx:105
+#: src/renderer/src/pages/read/head.tsx:112
 msgid "Todo"
 msgstr "未阅读"
 
-#: src/renderer/src/pages/create/head.tsx:121
-#: src/renderer/src/pages/read/head.tsx:71
+#: src/renderer/src/pages/create/head.tsx:173
+#: src/renderer/src/pages/read/head.tsx:79
 msgid "Undo"
 msgstr "撤消"

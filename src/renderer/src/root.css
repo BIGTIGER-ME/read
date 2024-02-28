@@ -111,6 +111,10 @@
   height: 0;
 }
 
+.tiptap img.ProseMirror-selectednode {
+  outline: 3px solid #000;
+}
+
 .prose li > p,
 .prose ol > p {
   margin: 0;

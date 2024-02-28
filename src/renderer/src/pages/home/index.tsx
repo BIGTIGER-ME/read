@@ -1,14 +1,19 @@
+import { useState } from 'react'
 import { Trans } from '@lingui/macro'
 import { useNavigate } from 'react-router-dom'
 import { PlusCircledIcon } from '@radix-ui/react-icons'
 import { Button } from 'renderer/components/ui/button'
 import { Separator } from 'renderer/components/ui/separator'
 import { Removable, NotRemovable } from 'renderer/components/removable'
-import { Sidebar } from './sidebar'
+import { useList } from 'renderer/hooks/document'
+import { IDocumentUISchema as IDocument } from 'schemas/document'
+import Sidebar from './sidebar'
 import Item from './item'
 
 function Home() {
   const navigate = useNavigate()
+  const { data: all } = useList()
+  const [filtered, setFiltered] = useState<IDocument[] | undefined>(undefined)
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -16,7 +21,7 @@ function Home() {
         <Removable>
           <div className="min-h-[52px] text-center" />
         </Removable>
-        <Sidebar className="hidden lg:block" />
+        <Sidebar data={all} className="hidden lg:block" onChange={setFiltered} />
       </div>
       <div className="h-full flex-1 border-l overflow-x-hidden">
         <div className="flex flex-col h-full pt-6">
@@ -43,9 +48,9 @@ function Home() {
           </div>
           <div className="flex-1 overflow-x-hidden px-8 pt-4">
             <div className="flex flex-wrap gap-4 pb-4">
-              {Array.from(new Array(20), (_, index) => index).map((album) => (
-                <div className="basis-1/6" key={album}>
-                  <Item />
+              {(filtered ?? all).map((data) => (
+                <div className="basis-1/6" key={data.id}>
+                  <Item data={data} />
                 </div>
               ))}
             </div>

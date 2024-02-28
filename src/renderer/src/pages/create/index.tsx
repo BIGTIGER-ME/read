@@ -38,9 +38,7 @@ const content = `
 `
 
 function Create() {
-  const editor = useEditor({
-    content
-  })
+  const editor = useEditor({ content })
 
   if (!editor) return null
   return (

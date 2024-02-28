@@ -2,6 +2,7 @@
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
   "include": [
     "src/locales/**/*",
+    "src/schemas/**/*",
     "src/renderer/src/env.d.ts",
     "src/renderer/src/**/*",
     "src/renderer/src/**/*.json",
@@ -16,6 +17,9 @@
     "paths": {
       "renderer/*": [
         "src/renderer/src/*"
+      ],
+      "schemas/*": [
+        "src/schemas/*"
       ],
       "locales/*": [
         "src/locales/*"
