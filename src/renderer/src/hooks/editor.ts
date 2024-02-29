@@ -20,45 +20,43 @@ interface IEditorOptions {
 }
 
 export function useEditor({ content, editorProps, onUpdate }: IEditorOptions) {
-  const editor = useTiptapEditor(
-    {
-      content,
-      editorProps,
-      extensions: [
-        Heading.extend({
-          name: 'title',
-          levels: [1]
-        }),
-        Heading,
-        Paragraph,
-        Blockquote,
-        BulletList,
-        OrderedList,
-        ListItem,
-        Text,
-        History,
-        Media,
-        Document.extend({
-          content: 'title media block*'
-        }),
-        Placeholder.configure({
-          placeholder: ({ node }) => {
-            if (node.type.name === 'title') {
-              return 'What’s the title?'
-            }
-            return ''
+  const editor = useTiptapEditor({
+    content,
+    editorProps,
+    extensions: [
+      Heading.extend({
+        name: 'title',
+        levels: [1]
+      }),
+      Heading,
+      Paragraph,
+      Blockquote,
+      BulletList,
+      OrderedList,
+      ListItem,
+      Text,
+      History,
+      Media,
+      Document.extend({
+        content: 'title media block*'
+      }),
+      Placeholder.configure({
+        placeholder: ({ node }) => {
+          if (node.type.name === 'title') {
+            return 'What’s the title?'
           }
-        }),
-        Image.configure({
-          allowBase64: true,
-          HTMLAttributes: {
-            style: 'width: 100%'
-          }
-        }),
-      ],
-      onUpdate: onUpdate ?? (() => {})
-    }
-  )
+          return ''
+        }
+      }),
+      Image.configure({
+        allowBase64: true,
+        HTMLAttributes: {
+          style: 'width: 100%'
+        }
+      })
+    ],
+    onUpdate: onUpdate ?? (() => {})
+  })
 
   return editor
 }

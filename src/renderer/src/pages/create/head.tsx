@@ -51,10 +51,10 @@ function Head({ editor }: IHeadProps) {
     const media = editor.$node('media')
     console.log(media?.setAttribute({ cover: null }))
     const content = editor.getJSON()
-    console.log(content)
-    const data = await create(content)
+    await create(content)
+    // const data = await create(content)
 
-    navigate(`/read/${data.id}`, { replace: true })
+    // navigate(`/read/${data.id}`, { replace: true })
   }, [editor, create, navigate])
 
   return (

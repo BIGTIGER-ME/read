@@ -63,7 +63,8 @@ class Service {
   private async _create({ content }: Pick<Model, 'content'>): Promise<IDocument> {
     const document = this._repository.create({ content })
 
-    await this._repository.save(document)
+    console.log(content)
+    // await this._repository.save(document)
 
     return {
       id: document.id,

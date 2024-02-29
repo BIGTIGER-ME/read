@@ -47,7 +47,7 @@ function Main({ data }: IMainProps) {
       <Separator />
       <div className="flex-1 overflow-auto">
         <div className="p-11">
-          {/* <Editor.Content editor={editor} /> */}
+          <Editor.Content editor={editor} />
           <div className="text-center my-16">
             <p className="text-xs mb-4 text-muted-foreground">
               <Trans>What do you think about the difficulty level of this article?</Trans>

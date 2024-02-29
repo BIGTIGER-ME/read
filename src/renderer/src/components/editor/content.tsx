@@ -5,7 +5,7 @@ interface IEditorProps {
 }
 
 function Content({ editor }: IEditorProps) {
-  return <EditorContent className="prose mx-auto" editor={editor} />
+  return <EditorContent className="prose mx-auto dark:prose-invert" editor={editor} />
 }
 
 export default Content

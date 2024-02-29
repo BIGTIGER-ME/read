@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import html2canvas from 'html2canvas'
+import { useTheme } from 'renderer/hooks/theme'
 import { cn } from 'renderer/utils'
 import { runTask } from './utils'
 
@@ -12,12 +13,14 @@ interface ICoverProps {
 const cache: { [content: string]: string } = {}
 
 function CoverImage({ content, src, className }: ICoverProps) {
+  const { theme } = useTheme()
   const [image, setImage] = useState(src)
 
   useEffect(() => {
     if (src) return
-    if (cache[content]) {
-      setImage(cache[content])
+    const key = theme + content
+    if (cache[key]) {
+      setImage(cache[key])
     } else {
       runTask(() => {
         const container = document.createElement('div')
@@ -29,12 +32,12 @@ function CoverImage({ content, src, className }: ICoverProps) {
           const image = canvas.toDataURL('image/png')
 
           setImage(image)
-          cache[content] = image
+          cache[key] = image
         })
         document.body.removeChild(container)
       })
     }
-  }, [content, setImage])
+  }, [content, theme, setImage])
 
   return (
     <div
