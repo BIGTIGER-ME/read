@@ -20,7 +20,7 @@ export class Model {
 
   @Column('simple-enum', {
     enum: [Difficulty.Low, Difficulty.Medium, Difficulty.High],
-    default: Difficulty.Medium
+    nullable: true
   })
   difficulty!: Difficulty
 

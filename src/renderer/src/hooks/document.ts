@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import merge from 'lodash/merge'
 import useSWR, { useSWRConfig } from 'swr'
 import * as documentServ from 'renderer/services/document'
-import { IDocumentUISchema as IDocument, TDoucumentUpdatableField } from 'schemas/document'
+import { IDocumentUISchema as IDocument, TDocumentUpdatableField } from 'schemas/document'
 
 const DOCUMENT_LIST_KEY = 'DOCUMENT_LIST'
 const DOCUMENT_ITEM_KEY = 'DOCUMENT_ITEM'
@@ -60,7 +60,7 @@ export function useRemove(id: IDocument['id']) {
 export function useUpdate(id: IDocument['id']) {
   const { mutate } = useSWRConfig()
   const update = useCallback(
-    async (data: Partial<Pick<IDocument, TDoucumentUpdatableField>>) => {
+    async (data: Partial<Pick<IDocument, TDocumentUpdatableField>>) => {
       const updated = await mutate(DOCUMENT_ITEM_KEY + id, () => documentServ.update(id, data), {
         optimisticData: (cache) => merge(cache, data)
       })

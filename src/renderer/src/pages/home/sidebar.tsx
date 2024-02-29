@@ -1,4 +1,4 @@
-import { useState, useMemo, createElement } from 'react'
+import { useState, useMemo, useEffect, createElement } from 'react'
 import { Trans } from '@lingui/macro'
 import {
   ArrowDownIcon,
@@ -20,17 +20,28 @@ interface ISidebarProps {
   onChange: (data: IDocument[]) => void
 }
 
+enum MenuId {
+  Common = 'COMMON',
+  Status = 'STATUS',
+  Difficulty = 'DIFFICULTY'
+}
+
+enum CommonSubmenuId {
+  All = 'ALL',
+  Archived = 'ARCHIVED'
+}
+
 function Sidebar({ className, data, onChange }: ISidebarProps) {
-  const [active, setActive] = useState('common-all')
-  const menus = useMemo(
-    () => [
-      {
-        id: 'common',
+  const [active, setActive] = useState<[string, string]>([MenuId.Common, CommonSubmenuId.All])
+  const menus = useMemo(() => {
+    const all = data.filter((item) => !item.archived)
+
+    return {
+      [MenuId.Common]: {
         label: <Trans>Document</Trans>,
         fontSize: 'text-lg',
-        submenus: [
-          {
-            id: 'all',
+        submenus: {
+          [CommonSubmenuId.All]: {
             label: <Trans>All Documents</Trans>,
             icon: () => (
               <svg
@@ -49,91 +60,86 @@ function Sidebar({ className, data, onChange }: ISidebarProps) {
                 <path d="M4 4v16" />
               </svg>
             ),
-            items: data.filter((item) => !item.archived)
+            items: all
           },
-          {
-            id: 'archived',
+          [CommonSubmenuId.Archived]: {
             label: <Trans>Archived</Trans>,
             icon: Archive,
             items: data.filter((item) => item.archived)
           }
-        ]
+        }
       },
-      {
-        id: 'status',
+      [MenuId.Status]: {
         label: <Trans>Status</Trans>,
         fontSize: 'text-base',
-        submenus: [
-          {
-            id: Status.Todo,
+        submenus: {
+          [Status.Todo]: {
             label: <Trans>Todo</Trans>,
             icon: CircleIcon,
-            items: data.filter((item) => item.status === Status.Todo)
+            items: all.filter((item) => item.status === Status.Todo)
           },
-          {
-            id: Status.Doing,
+          [Status.Doing]: {
             label: <Trans>In Progress</Trans>,
             icon: StopwatchIcon,
-            items: data.filter((item) => item.status === Status.Doing)
+            items: all.filter((item) => item.status === Status.Doing)
           },
-          {
-            id: Status.Backlog,
+          [Status.Backlog]: {
             label: <Trans>Have doubts</Trans>,
             icon: QuestionMarkCircledIcon,
-            items: data.filter((item) => item.status === Status.Backlog)
+            items: all.filter((item) => item.status === Status.Backlog)
           },
-          {
-            id: Status.Done,
+          [Status.Done]: {
             label: <Trans>Done</Trans>,
             icon: CheckCircledIcon,
-            items: data.filter((item) => item.status === Status.Done)
+            items: all.filter((item) => item.status === Status.Done)
           }
-        ]
+        }
       },
-      {
-        id: 'difficulty',
+      [MenuId.Difficulty]: {
         label: <Trans>Difficulty</Trans>,
         fontSize: 'text-base',
-        submenus: [
-          {
-            id: Difficulty.High,
+        submenus: {
+          [Difficulty.High]: {
             label: <Trans>High</Trans>,
             icon: ArrowUpIcon,
-            items: data.filter((item) => item.difficulty === Difficulty.High)
+            items: all.filter((item) => item.difficulty === Difficulty.High)
           },
-          {
-            id: Difficulty.Medium,
+          [Difficulty.Medium]: {
             label: <Trans>Medium</Trans>,
             icon: ArrowRightIcon,
-            items: data.filter((item) => item.difficulty === Difficulty.Medium)
+            items: all.filter((item) => item.difficulty === Difficulty.Medium)
           },
-          {
-            id: Difficulty.Low,
+          [Difficulty.Low]: {
             label: <Trans>Low</Trans>,
             icon: ArrowDownIcon,
-            items: data.filter((item) => item.difficulty === Difficulty.Low)
+            items: all.filter((item) => item.difficulty === Difficulty.Low)
           }
-        ]
+        }
       }
-    ],
-    [data]
-  )
+    }
+  }, [data])
+
+  useEffect(() => {
+    const items: IDocument[] | undefined = menus[active[0]]?.submenus?.[active[1]]?.items
+    if (items) onChange(items)
+  }, [active, menus, onChange])
 
   return (
     <div className={cn('pb-12', className)}>
       <div className="space-y-4">
-        {menus.map((menu) => (
-          <div className="px-3 py-2" key={menu.id}>
-            <h2 className={cn('mb-2 px-4 font-semibold tracking-tight', menu.fontSize)}>{menu.label}</h2>
+        {Object.entries(menus).map(([menuId, menu]) => (
+          <div className="px-3 py-2" key={menuId}>
+            <h2 className={cn('mb-2 px-4 font-semibold tracking-tight', menu.fontSize)}>
+              {menu.label}
+            </h2>
             <div className="space-y-1">
-              {menu.submenus.map((submenu) => (
+              {Object.entries(menu.submenus).map(([submenuId, submenu]) => (
                 <Button
                   key={submenu.id}
-                  variant={active === `${menu.id}-${submenu.id}` ? 'secondary' : 'ghost'}
+                  variant={active[0] === menuId && active[1] === submenuId ? 'secondary' : 'ghost'}
                   className="w-full justify-start"
                   onClick={() => {
-                    setActive(`${menu.id}-${submenu.id}`)
-                    onChange(submenu.items)
+                    setActive([menuId, submenuId])
                   }}
                 >
                   {createElement(submenu.icon, { strokeWidth: 2, className: 'mr-2 h-4 w-4' })}

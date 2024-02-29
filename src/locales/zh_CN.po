@@ -202,33 +202,33 @@ msgstr "作者：jinyang1994"
 msgid "New Window"
 msgstr "新建窗口"
 
-#: src/renderer/src/pages/home/item.tsx:51
+#: src/renderer/src/pages/home/item.tsx:48
 msgid "About {words} words"
 msgstr "大约{words}个单词"
 
-#: src/renderer/src/pages/create/head.tsx:199
-#: src/renderer/src/pages/home/index.tsx:47
+#: src/renderer/src/pages/create/head.tsx:198
+#: src/renderer/src/pages/home/index.tsx:43
 msgid "Add document"
 msgstr "添加文章"
 
-#: src/renderer/src/pages/home/sidebar.tsx:41
+#: src/renderer/src/pages/home/sidebar.tsx:45
 msgid "All Documents"
 msgstr "全部文章"
 
-#: src/renderer/src/pages/read/head.tsx:55
+#: src/renderer/src/pages/read/head.tsx:74
 msgid "Archive"
 msgstr "归档"
 
-#: src/renderer/src/pages/home/sidebar.tsx:45
+#: src/renderer/src/pages/home/sidebar.tsx:66
 msgid "Archived"
 msgstr "已归档"
 
-#: src/renderer/src/pages/create/head.tsx:53
-#: src/renderer/src/pages/read/head.tsx:44
+#: src/renderer/src/pages/create/head.tsx:69
+#: src/renderer/src/pages/read/head.tsx:59
 msgid "Back"
 msgstr "返回"
 
-#: src/renderer/src/pages/create/head.tsx:140
+#: src/renderer/src/pages/create/head.tsx:139
 msgid "Bullet List"
 msgstr "无序列表"
 
@@ -236,104 +236,108 @@ msgstr "无序列表"
 msgid "Chinese Simplified"
 msgstr "中文简体"
 
-#: src/renderer/src/pages/home/sidebar.tsx:74
+#: src/renderer/src/pages/home/sidebar.tsx:99
 msgid "Difficulty"
 msgstr "难度"
 
-#: src/renderer/src/pages/home/sidebar.tsx:22
+#: src/renderer/src/pages/home/sidebar.tsx:41
 msgid "Document"
 msgstr "文章"
 
-#: src/renderer/src/pages/home/sidebar.tsx:68
-#: src/renderer/src/pages/read/head.tsx:126
+#: src/renderer/src/pages/home/sidebar.tsx:92
+#: src/renderer/src/pages/read/head.tsx:34
 msgid "Done"
 msgstr "已阅读"
+
+#: src/renderer/src/pages/read/index.tsx:17
+msgid "Easy, a walk in the park."
+msgstr "简单，小菜一碟"
 
 #: src/renderer/src/components/i18n/switcher.tsx:16
 msgid "English"
 msgstr "English"
 
-#: src/renderer/src/pages/home/index.tsx:41
+#: src/renderer/src/pages/home/index.tsx:37
 msgid "Every new day is another chance to change your life."
 msgstr "Every new day is another chance to change your life. - 每一天都是改变人生的机会。"
 
-#: src/renderer/src/pages/home/index.tsx:38
+#: src/renderer/src/pages/home/index.tsx:34
 msgid "Good morning, reader!"
 msgstr "早晨好，读者！"
 
-#: src/renderer/src/pages/home/sidebar.tsx:64
-#: src/renderer/src/pages/read/head.tsx:119
+#: src/renderer/src/pages/home/sidebar.tsx:87
+#: src/renderer/src/pages/read/head.tsx:33
 msgid "Have doubts"
 msgstr "有疑问"
 
-#: src/renderer/src/pages/create/head.tsx:80
-msgid "Heading 2"
-msgstr "标题2"
+#: src/renderer/src/pages/create/head.tsx:94
+msgid "Heading {level}"
+msgstr "标题{level}"
 
-#: src/renderer/src/pages/create/head.tsx:84
-msgid "Heading 3"
-msgstr "标题3"
-
-#: src/renderer/src/pages/create/head.tsx:88
-msgid "Heading 4"
-msgstr "标题4"
-
-#: src/renderer/src/pages/create/head.tsx:92
-msgid "Heading 5"
-msgstr "标题5"
-
-#: src/renderer/src/pages/create/head.tsx:96
-msgid "Heading 6"
-msgstr "标题6"
-
-#: src/renderer/src/pages/home/sidebar.tsx:79
+#: src/renderer/src/pages/home/sidebar.tsx:103
 msgid "High"
-msgstr "高等级"
+msgstr "困难"
 
-#: src/renderer/src/pages/home/sidebar.tsx:56
-#: src/renderer/src/pages/read/head.tsx:105
+#: src/renderer/src/pages/home/sidebar.tsx:82
+#: src/renderer/src/pages/read/head.tsx:32
 msgid "In Progress"
 msgstr "阅读中"
 
-#: src/renderer/src/pages/home/sidebar.tsx:88
+#: src/renderer/src/pages/home/sidebar.tsx:113
 msgid "Low"
-msgstr "低等级"
+msgstr "简单"
 
-#: src/renderer/src/pages/home/sidebar.tsx:83
+#: src/renderer/src/pages/home/sidebar.tsx:108
 msgid "Medium"
-msgstr "普通等级"
+msgstr "适中"
 
-#: src/renderer/src/pages/create/head.tsx:154
+#: src/renderer/src/pages/read/index.tsx:18
+msgid "Moderate, just right for me."
+msgstr "适中，刚刚好适合我"
+
+#: src/renderer/src/pages/home/index.tsx:61
+msgid "No results"
+msgstr "未找到文章"
+
+#: src/renderer/src/pages/create/head.tsx:153
 msgid "Ordered List"
 msgstr "有序列表"
 
-#: src/renderer/src/pages/create/head.tsx:111
+#: src/renderer/src/pages/create/head.tsx:110
 msgid "Quote"
 msgstr "引用"
 
-#: src/renderer/src/pages/create/head.tsx:188
-#: src/renderer/src/pages/read/head.tsx:89
+#: src/renderer/src/pages/create/head.tsx:187
+#: src/renderer/src/pages/read/head.tsx:118
 msgid "Redo"
 msgstr "重做"
 
-#: src/renderer/src/pages/read/head.tsx:65
+#: src/renderer/src/pages/read/head.tsx:84
 msgid "Remove"
 msgstr "删除"
 
-#: src/renderer/src/pages/home/sidebar.tsx:51
+#: src/renderer/src/pages/home/sidebar.tsx:73
 msgid "Status"
 msgstr "状态"
 
-#: src/renderer/src/pages/create/head.tsx:125
+#: src/renderer/src/pages/create/head.tsx:124
 msgid "Text"
 msgstr "文本"
 
-#: src/renderer/src/pages/home/sidebar.tsx:60
-#: src/renderer/src/pages/read/head.tsx:112
+#: src/renderer/src/pages/home/sidebar.tsx:77
+#: src/renderer/src/pages/read/head.tsx:31
 msgid "Todo"
 msgstr "未阅读"
 
-#: src/renderer/src/pages/create/head.tsx:173
-#: src/renderer/src/pages/read/head.tsx:79
+#: src/renderer/src/pages/read/index.tsx:19
+msgid "Too difficult, my brain is about to smoke"
+msgstr "太难，脑袋要冒烟了"
+
+#: src/renderer/src/pages/create/head.tsx:172
+#: src/renderer/src/pages/read/head.tsx:103
 msgid "Undo"
 msgstr "撤消"
+
+#: src/renderer/src/pages/read/index.tsx:53
+msgid "What do you think about the difficulty level of this article?"
+msgstr "觉得这篇文章的难度怎么样？"

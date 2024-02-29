@@ -9,22 +9,31 @@ interface ICoverProps {
   className?: string
 }
 
+const cache: { [content: string]: string } = {}
+
 function CoverImage({ content, src, className }: ICoverProps) {
   const [image, setImage] = useState(src)
 
   useEffect(() => {
     if (src) return
-    runTask(() => {
-      const container = document.createElement('div')
+    if (cache[content]) {
+      setImage(cache[content])
+    } else {
+      runTask(() => {
+        const container = document.createElement('div')
 
-      container.className = 'prose prose-zinc mx-auto dark:prose-invert'
-      container.innerHTML = content
-      document.body.append(container)
-      html2canvas(container, { backgroundColor: null }).then((canvas) => {
-        setImage(canvas.toDataURL('image/png'))
+        container.className = 'prose prose-zinc mx-auto dark:prose-invert'
+        container.innerHTML = content
+        document.body.append(container)
+        html2canvas(container, { backgroundColor: null }).then((canvas) => {
+          const image = canvas.toDataURL('image/png')
+
+          setImage(image)
+          cache[content] = image
+        })
+        document.body.removeChild(container)
       })
-      document.body.removeChild(container)
-    })
+    }
   }, [content, setImage])
 
   return (

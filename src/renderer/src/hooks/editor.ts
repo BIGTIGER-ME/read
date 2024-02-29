@@ -11,7 +11,7 @@ import { Image } from '@tiptap/extension-image'
 import { Paragraph } from '@tiptap/extension-paragraph'
 import { Text } from '@tiptap/extension-text'
 import { History } from '@tiptap/extension-history'
-import * as Extension from 'renderer/components/editor/extensions'
+import Media from 'renderer/components/editor/media'
 
 interface IEditorOptions {
   content: Content
@@ -25,6 +25,10 @@ export function useEditor({ content, editorProps, onUpdate }: IEditorOptions) {
       content,
       editorProps,
       extensions: [
+        Heading.extend({
+          name: 'title',
+          levels: [1]
+        }),
         Heading,
         Paragraph,
         Blockquote,
@@ -33,12 +37,13 @@ export function useEditor({ content, editorProps, onUpdate }: IEditorOptions) {
         ListItem,
         Text,
         History,
+        Media,
         Document.extend({
-          content: 'heading block*'
+          content: 'title media block*'
         }),
         Placeholder.configure({
-          placeholder: ({ node, pos }) => {
-            if (node.type.name === 'heading' && node.attrs.level === 1 && pos === 0) {
+          placeholder: ({ node }) => {
+            if (node.type.name === 'title') {
               return 'What’s the title?'
             }
             return ''
@@ -50,11 +55,9 @@ export function useEditor({ content, editorProps, onUpdate }: IEditorOptions) {
             style: 'width: 100%'
           }
         }),
-        Extension.Test.configure({ beforeContent: '(', afterContent: ')' })
       ],
-      onUpdate
-    },
-    [content]
+      onUpdate: onUpdate ?? (() => {})
+    }
   )
 
   return editor

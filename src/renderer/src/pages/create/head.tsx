@@ -48,7 +48,10 @@ function Head({ editor }: IHeadProps) {
   const navigate = useNavigate()
   const create = useCreate()
   const handleCreate = useCallback(async () => {
+    const media = editor.$node('media')
+    console.log(media?.setAttribute({ cover: null }))
     const content = editor.getJSON()
+    console.log(content)
     const data = await create(content)
 
     navigate(`/read/${data.id}`, { replace: true })
