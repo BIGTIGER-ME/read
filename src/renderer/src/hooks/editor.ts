@@ -11,23 +11,24 @@ import { Image } from '@tiptap/extension-image'
 import { Paragraph } from '@tiptap/extension-paragraph'
 import { Text } from '@tiptap/extension-text'
 import { History } from '@tiptap/extension-history'
-import Media from 'renderer/components/editor/media'
+import { Media } from 'renderer/components/editor'
 
 interface IEditorOptions {
   content: Content
+  mode?: Mode
   editorProps?: EditorProps
   onUpdate?: EditorOptions['onUpdate']
 }
 
-export function useEditor({ content, editorProps, onUpdate }: IEditorOptions) {
+export enum Mode {
+  Reading = 'reading'
+}
+
+export function useEditor({ content, mode, editorProps, onUpdate }: IEditorOptions) {
   const editor = useTiptapEditor({
     content,
     editorProps,
     extensions: [
-      Heading.extend({
-        name: 'title',
-        levels: [1]
-      }),
       Heading,
       Paragraph,
       Blockquote,
@@ -36,17 +37,15 @@ export function useEditor({ content, editorProps, onUpdate }: IEditorOptions) {
       ListItem,
       Text,
       History,
-      Media,
+      Media.configure({
+        preview: mode === Mode.Reading
+      }),
+      Heading.extend({ name: 'title', levels: [1] }),
       Document.extend({
         content: 'title media block*'
       }),
       Placeholder.configure({
-        placeholder: ({ node }) => {
-          if (node.type.name === 'title') {
-            return 'What’s the title?'
-          }
-          return ''
-        }
+        placeholder: ({ node }) => (node.type.name === 'title' ? 'What’s the title?' : '')
       }),
       Image.configure({
         allowBase64: true,

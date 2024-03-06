@@ -1,2 +1,2 @@
 export { default as Content } from './content'
-export * as Extension from './extensions'
+export { default as Media } from './media'

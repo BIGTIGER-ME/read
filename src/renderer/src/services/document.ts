@@ -1,42 +1,53 @@
-import { IDocumentUISchema as IDocument, TDocumentUpdatableField } from 'schemas/document'
+import {
+  IDocumentUISchema as IDocument,
+  IDocumentDBSchema,
+  IDocumentCreateUISchema as IDocumentCreateSchema,
+  TDocumentUpdatableField
+} from 'schemas/document'
+import { fileToUint8Array } from 'renderer/utils'
+
+function transform(document: IDocumentDBSchema): IDocument {
+  const documentContent = JSON.parse(document.content)
+  const cover = document.cover && new File([document.cover], 'cover')
+
+  if (cover) {
+    const media = documentContent.content.find((item) => item.type === 'media')
+
+    media.attrs.cover = cover
+  }
+
+  return {
+    ...document,
+    cover,
+    content: documentContent,
+    updatedAt: document.updated_at,
+    createdAt: document.created_at
+  }
+}
 
 export async function list(): Promise<IDocument[]> {
   const documents = await window.api.document.list()
 
-  return documents.map((data) => ({
-    ...data,
-    content: JSON.parse(data.content),
-    updatedAt: data.updated_at,
-    createdAt: data.created_at
-  }))
+  return documents.map(transform)
 }
 
 export async function get(id: IDocument['id']): Promise<IDocument> {
   const data = await window.api.document.get(id)
 
-  return {
-    ...data,
-    content: JSON.parse(data.content),
-    updatedAt: data.updated_at,
-    createdAt: data.created_at
-  }
+  return transform(data)
 }
 
 export async function remove(id: IDocument['id']): Promise<void> {
   await window.api.document.remove(id)
 }
 
-export async function create(data: Pick<IDocument, 'content'>): Promise<IDocument> {
+export async function create({ content, cover }: IDocumentCreateSchema): Promise<IDocument> {
   const created = await window.api.document.create({
-    content: JSON.stringify(data.content)
+    content: JSON.stringify(content),
+    cover: cover && (await fileToUint8Array(cover))
   })
 
-  return {
-    ...created,
-    content: JSON.parse(created.content),
-    updatedAt: created.updated_at,
-    createdAt: created.created_at
-  }
+  return transform(created)
 }
 
 export async function update(
@@ -50,10 +61,5 @@ export async function update(
     difficulty: data.difficulty
   })
 
-  return {
-    ...updated,
-    content: JSON.parse(updated.content),
-    updatedAt: updated.updated_at,
-    createdAt: updated.created_at
-  }
+  return transform(updated)
 }

@@ -6,8 +6,11 @@ export class Model {
   @PrimaryGeneratedColumn()
   id!: number
 
-  @Column({ type: 'text', nullable: false })
+  @Column('text', { nullable: false })
   content!: string
+
+  @Column('blob', { nullable: true })
+  cover?: Buffer
 
   @Column('simple-enum', {
     enum: [Status.Todo, Status.Doing, Status.Backlog, Status.Done],

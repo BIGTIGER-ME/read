@@ -3,7 +3,7 @@ import { Trans, t } from '@lingui/macro'
 import { Separator } from 'renderer/components/ui/separator'
 import { TooltipProvider } from 'renderer/components/ui/tooltip'
 import * as Editor from 'renderer/components/editor'
-import { useEditor } from 'renderer/hooks/editor'
+import { useEditor, Mode } from 'renderer/hooks/editor'
 import { useFetch, useUpdate } from 'renderer/hooks/document'
 import { IDocumentUISchema as IDocument, Difficulty } from 'schemas/document'
 import { cn } from 'renderer/utils'
@@ -22,6 +22,7 @@ const difficulties = [
 function Main({ data }: IMainProps) {
   const update = useUpdate(data.id)
   const editor = useEditor({
+    mode: Mode.Reading,
     content: data.content,
     editorProps: {
       handleTextInput: () => true,

@@ -2,7 +2,11 @@ import { useCallback } from 'react'
 import merge from 'lodash/merge'
 import useSWR, { useSWRConfig } from 'swr'
 import * as documentServ from 'renderer/services/document'
-import { IDocumentUISchema as IDocument, TDocumentUpdatableField } from 'schemas/document'
+import {
+  IDocumentUISchema as IDocument,
+  IDocumentCreateUISchema as IDocumentCreateSchema,
+  TDocumentUpdatableField
+} from 'schemas/document'
 
 const DOCUMENT_LIST_KEY = 'DOCUMENT_LIST'
 const DOCUMENT_ITEM_KEY = 'DOCUMENT_ITEM'
@@ -27,8 +31,8 @@ export function useFetch(id: IDocument['id']) {
 export function useCreate() {
   const { mutate } = useSWRConfig()
   const create = useCallback(
-    async (content: IDocument['content']) => {
-      const created = await documentServ.create({ content })
+    async ({ content, cover }: IDocumentCreateSchema) => {
+      const created = await documentServ.create({ content, cover })
 
       await mutate(DOCUMENT_ITEM_KEY + created.id, created)
       await mutate(DOCUMENT_LIST_KEY, () => documentServ.list(), {

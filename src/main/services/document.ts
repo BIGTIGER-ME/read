@@ -1,7 +1,11 @@
 import { ipcMain, ipcRenderer } from 'electron'
 import { DataSource, Repository } from 'typeorm'
 import { Model } from 'main/models/document'
-import { IDocumentDBSchema as IDocument, TDocumentUpdatableField } from 'schemas/document'
+import {
+  IDocumentDBSchema as IDocument,
+  IDocumentCreateDBSchema as IDocumentCreateSchema,
+  TDocumentUpdatableField
+} from 'schemas/document'
 
 export const DOCUMENT_GET_CHANNEL = 'DOCUMENT_GET'
 export const DOCUMENT_LIST_CHANNEL = 'DOCUMENT_LIST'
@@ -13,13 +17,27 @@ export const methods = {
   get: (id: IDocument['id']): Promise<IDocument> =>
     ipcRenderer.invoke(DOCUMENT_GET_CHANNEL, { id }),
   list: (): Promise<IDocument[]> => ipcRenderer.invoke(DOCUMENT_LIST_CHANNEL),
-  create: (data: Pick<IDocument, 'content'>): Promise<IDocument> =>
-    ipcRenderer.invoke(DOCUMENT_CREATE_CHANNEL, data),
+  create: (data: IDocumentCreateSchema): Promise<IDocument> => {
+    return ipcRenderer.invoke(DOCUMENT_CREATE_CHANNEL, data)
+  },
   update: (
     id: IDocument['id'],
     data: Partial<Pick<IDocument, TDocumentUpdatableField>>
   ): Promise<IDocument> => ipcRenderer.invoke(DOCUMENT_UPDATE_CHANNEL, { id, data }),
   remove: (id: IDocument['id']) => ipcRenderer.invoke(DOCUMENT_DELETE_CHANNEL, { id })
+}
+
+function transform(document: Model): IDocument {
+  return {
+    id: document.id,
+    content: document.content,
+    status: document.status,
+    cover: document.cover,
+    archived: document.archived,
+    difficulty: document.difficulty,
+    created_at: document.created_at,
+    updated_at: document.updated_at
+  }
 }
 
 class Service {
@@ -32,13 +50,16 @@ class Service {
   public async listen() {
     ipcMain.handle(DOCUMENT_GET_CHANNEL, (_, { id }: { id: IDocument['id'] }) => this._get(id))
     ipcMain.handle(DOCUMENT_LIST_CHANNEL, () => this._list())
-    ipcMain.handle(DOCUMENT_CREATE_CHANNEL, (_, data: Pick<IDocument, 'content'>) =>
-      this._create(data)
-    )
+    ipcMain.handle(DOCUMENT_CREATE_CHANNEL, (_, data: IDocumentCreateSchema) => this._create(data))
     ipcMain.handle(
       DOCUMENT_UPDATE_CHANNEL,
-      (_, { id, data }: { id: IDocument['id']; data: Pick<IDocument, 'content'> }) =>
-        this._update(id, data)
+      (
+        _,
+        {
+          id,
+          data
+        }: { id: IDocument['id']; data: Partial<Pick<IDocument, TDocumentUpdatableField>> }
+      ) => this._update(id, data)
     )
     ipcMain.handle(DOCUMENT_DELETE_CHANNEL, (_, { id }: { id: IDocument['id'] }) =>
       this._remove(id)
@@ -49,46 +70,22 @@ class Service {
     const document = await this._repository.findOneBy({ id })
     if (!document) throw new Error('document not found')
 
-    return {
-      id: document.id,
-      content: document.content,
-      status: document.status,
-      archived: document.archived,
-      difficulty: document.difficulty,
-      created_at: document.created_at,
-      updated_at: document.updated_at
-    }
+    return transform(document)
   }
 
-  private async _create({ content }: Pick<Model, 'content'>): Promise<IDocument> {
+  private async _create({ content, cover }: IDocumentCreateSchema): Promise<IDocument> {
     const document = this._repository.create({ content })
 
-    console.log(content)
-    // await this._repository.save(document)
+    if (cover) document.cover = Buffer.from(cover)
+    await this._repository.save(document)
 
-    return {
-      id: document.id,
-      content: document.content,
-      status: document.status,
-      archived: document.archived,
-      difficulty: document.difficulty,
-      created_at: document.created_at,
-      updated_at: document.updated_at
-    }
+    return transform(document)
   }
 
   private async _list(): Promise<IDocument[]> {
     const documents = await this._repository.find()
 
-    return documents.map((document) => ({
-      id: document.id,
-      content: document.content,
-      status: document.status,
-      archived: document.archived,
-      difficulty: document.difficulty,
-      created_at: document.created_at,
-      updated_at: document.updated_at
-    }))
+    return documents.map(transform)
   }
 
   private async _update(
@@ -103,15 +100,7 @@ class Service {
     if (archived !== undefined) document.archived = archived
     const updated = await this._repository.save(document)
 
-    return {
-      id: updated.id,
-      content: updated.content,
-      status: updated.status,
-      archived: document.archived,
-      difficulty: updated.difficulty,
-      created_at: updated.created_at,
-      updated_at: updated.updated_at
-    }
+    return transform(updated)
   }
 
   private async _remove(id: IDocument['id']): Promise<void> {

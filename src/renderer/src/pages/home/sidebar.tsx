@@ -135,7 +135,7 @@ function Sidebar({ className, data, onChange }: ISidebarProps) {
             <div className="space-y-1">
               {Object.entries(menu.submenus).map(([submenuId, submenu]) => (
                 <Button
-                  key={submenu.id}
+                  key={submenuId}
                   variant={active[0] === menuId && active[1] === submenuId ? 'secondary' : 'ghost'}
                   className="w-full justify-start"
                   onClick={() => {

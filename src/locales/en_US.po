@@ -206,7 +206,7 @@ msgstr "New Window"
 msgid "About {words} words"
 msgstr "About {words} words"
 
-#: src/renderer/src/pages/create/head.tsx:198
+#: src/renderer/src/pages/create/head.tsx:199
 #: src/renderer/src/pages/home/index.tsx:43
 msgid "Add document"
 msgstr "Add document"
@@ -223,12 +223,12 @@ msgstr "Archive"
 msgid "Archived"
 msgstr "Archived"
 
-#: src/renderer/src/pages/create/head.tsx:69
+#: src/renderer/src/pages/create/head.tsx:70
 #: src/renderer/src/pages/read/head.tsx:59
 msgid "Back"
 msgstr "Back"
 
-#: src/renderer/src/pages/create/head.tsx:139
+#: src/renderer/src/pages/create/head.tsx:140
 msgid "Bullet List"
 msgstr "Bullet List"
 
@@ -248,6 +248,10 @@ msgstr "Document"
 #: src/renderer/src/pages/read/head.tsx:34
 msgid "Done"
 msgstr "Done"
+
+#: src/renderer/src/components/editor/media.tsx:69
+msgid "Drag and drop an image or click here to upload a cover image"
+msgstr "Drag and drop an image or click here to upload a cover image"
 
 #: src/renderer/src/pages/read/index.tsx:17
 msgid "Easy, a walk in the park."
@@ -270,7 +274,7 @@ msgstr "Good morning, reader!"
 msgid "Have doubts"
 msgstr "Have doubts"
 
-#: src/renderer/src/pages/create/head.tsx:94
+#: src/renderer/src/pages/create/head.tsx:95
 msgid "Heading {level}"
 msgstr "Heading {level}"
 
@@ -295,19 +299,19 @@ msgstr "Medium"
 msgid "Moderate, just right for me."
 msgstr "Moderate, just right for me."
 
-#: src/renderer/src/pages/home/index.tsx:61
+#: src/renderer/src/pages/home/index.tsx:63
 msgid "No results"
 msgstr "No results"
 
-#: src/renderer/src/pages/create/head.tsx:153
+#: src/renderer/src/pages/create/head.tsx:154
 msgid "Ordered List"
 msgstr "Ordered List"
 
-#: src/renderer/src/pages/create/head.tsx:110
+#: src/renderer/src/pages/create/head.tsx:111
 msgid "Quote"
 msgstr "Quote"
 
-#: src/renderer/src/pages/create/head.tsx:187
+#: src/renderer/src/pages/create/head.tsx:188
 #: src/renderer/src/pages/read/head.tsx:118
 msgid "Redo"
 msgstr "Redo"
@@ -320,7 +324,7 @@ msgstr "Remove"
 msgid "Status"
 msgstr "Status"
 
-#: src/renderer/src/pages/create/head.tsx:124
+#: src/renderer/src/pages/create/head.tsx:125
 msgid "Text"
 msgstr "Text"
 
@@ -333,11 +337,11 @@ msgstr "Todo"
 msgid "Too difficult, my brain is about to smoke"
 msgstr "Too difficult, my brain is about to smoke"
 
-#: src/renderer/src/pages/create/head.tsx:172
+#: src/renderer/src/pages/create/head.tsx:173
 #: src/renderer/src/pages/read/head.tsx:103
 msgid "Undo"
 msgstr "Undo"
 
-#: src/renderer/src/pages/read/index.tsx:53
+#: src/renderer/src/pages/read/index.tsx:54
 msgid "What do you think about the difficulty level of this article?"
 msgstr "What do you think about the difficulty level of this article?"

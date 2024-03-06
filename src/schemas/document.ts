@@ -16,6 +16,7 @@ export enum Difficulty {
 export interface IDocumentDBSchema {
   id: number
   content: string
+  cover?: Buffer
   status: Status
   archived: boolean
   difficulty: Difficulty
@@ -24,10 +25,19 @@ export interface IDocumentDBSchema {
 }
 
 export interface IDocumentUISchema
-  extends Omit<IDocumentDBSchema, 'content' | 'created_at' | 'updated_at'> {
+  extends Omit<IDocumentDBSchema, 'content' | 'created_at' | 'updated_at' | 'cover'> {
+  cover?: File
   content: JSONContent
   createdAt: number
   updatedAt: number
+}
+
+export interface IDocumentCreateDBSchema extends Pick<IDocumentDBSchema, 'content'> {
+  cover?: Uint8Array
+}
+
+export interface IDocumentCreateUISchema extends Pick<IDocumentUISchema, 'content'> {
+  cover?: File
 }
 
 export type TDocumentUpdatableField = 'content' | 'status' | 'difficulty' | 'archived'
