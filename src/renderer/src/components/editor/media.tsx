@@ -14,7 +14,7 @@ declare module '@tiptap/core' {
 }
 
 interface IPreviewProps {
-  value: File
+  value?: File
   onChange?: () => void
 }
 
@@ -24,6 +24,7 @@ interface IUploadProps {
 }
 
 function Preview({ value, onChange }: IPreviewProps) {
+  if (!value) return null
   return (
     <NodeViewWrapper>
       <img

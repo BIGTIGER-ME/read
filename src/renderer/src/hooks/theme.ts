@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { ThemeProviderContext } from 'renderer/components/theme/provider'
 
 export function useTheme() {
-  const { theme, setTheme } = useContext(ThemeProviderContext)
+  const { theme, isDark, setTheme } = useContext(ThemeProviderContext)
 
-  return { theme, setTheme }
+  return { theme, isDark, setTheme }
 }

@@ -13,12 +13,12 @@ interface ICoverProps {
 const cache: { [content: string]: string } = {}
 
 function CoverImage({ content, src, className }: ICoverProps) {
-  const { theme } = useTheme()
+  const { isDark } = useTheme()
   const [image, setImage] = useState(src)
 
   useEffect(() => {
     if (src) return
-    const key = theme + content
+    const key = (isDark ? 'dark' : 'light') + content
     if (cache[key]) {
       setImage(cache[key])
     } else {
@@ -37,7 +37,7 @@ function CoverImage({ content, src, className }: ICoverProps) {
         document.body.removeChild(container)
       })
     }
-  }, [content, theme, setImage])
+  }, [content, isDark, setImage])
 
   return (
     <div
